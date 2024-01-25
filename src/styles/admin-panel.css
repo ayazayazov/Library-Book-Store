@@ -206,10 +206,70 @@ nav ul li a:hover{
 
 }
 
+.title-tables{
+    color: #333;
+font-family: Montserrat;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: 196.187%;
+}
+.join-table{
+    text-align: center;
+    width: 50%;
+   
+}
+.join-first-title{
+    background-color: #720418;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 115%; 
+    color: #fff;
+    letter-spacing: 0.14px;
+box-shadow: 0px -1px 0px 0px #E6E7E9 inset;
+    display: table-header-group;
+}
+.join-table th {
+padding: 16px 16px;
+border-top: 1px solid #dee2e6;
+
+   
+}
+.table-body tr{
+    border-top: 1px solid #dee2e6;
+
+}
+
+.table-body{
+    padding: 0.75 rem;
+    color: #05111A;
+    font-family: Montserrat;
+font-size: 14px;
+font-weight: 400;
+line-height: 115%; 
+letter-spacing: 0.14px;
+}
+
 .books{
     margin-bottom: 100px;
 
 }
+.books-table{
+    text-align: center;
+    width: 100%;
+}
+.books-table th {
+    padding: 16px 16px;
+    border-top: 1px solid #dee2e6;
+}
+.book-icon{
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    padding-top: 6px;
+}
+
 
 .contact-us{
     margin-bottom: 100px;
