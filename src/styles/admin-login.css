@@ -3,6 +3,11 @@ main {
   height: 100%;
 }
 
+.admin-login{
+  display: block;
+  /* display: none; */
+}
+
 .login_logocontainer {
   display: flex;
   gap: 12px;

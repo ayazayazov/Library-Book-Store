@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html style="scroll-behavior: smooth" lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
@@ -8,400 +9,387 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
-          integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/admin-login.css">
     <link rel="stylesheet" href="../styles/admin-panel.css">
     <link rel="stylesheet" href="../styles/admin-form.css">
     <link rel="stylesheet" href="../styles/search_form.css">
 </head>
+
 <body>
-<main>
-    <!-- admin-login.css -->
-    <!-- admin-login.js -->
-    <div class="admin-login">
-<!-- -------- -->
-        <div class="login_logocontainer">
-          <img src="../assets/icon/books.svg" alt="oopoooikj" />
-          <div class="login-logo-text">
-            <h1>LIBRARY</h1>
-            <div class="line"></div>
-            <p>Admin Panel</p>
-          </div>
-        </div>
-        <!-- ---------- -->
-        <div class="login_form">
-          <div>
-            <h1>Welcome Admin</h1>
-          </div>
-
-          <div class="login_form_info">
-            <label class="" for="usarname"></label>
-            <input
-              class="form_infouser"
-              type="text"
-              placeholder="Usarname"
-              id="usarname"
-            />
-
-            <label for="password"></label>
-            <input type="password" placeholder="Password" id="pasword" />
-            <button id="admin_login_btn" class="login_button" type="submit">
-              Join
-            </button>
-          </div>
-        </div>
-        <!-- ---------- -->
-    </div>
-
-    <!-- admin-panel.css -->
-    <div class="admin-panel">
-        <aside id="aside">
-            <div class="logo-container">
-                <img src="../assets/icon/books.svg" alt="">
-                <div class="logo-text">
+    <main>
+        <!-- admin-login.css -->
+        <!-- admin-login.js -->
+        <div class="admin-login">
+            <!-- -------- -->
+            <div class="login_logocontainer">
+                <img src="../assets/icon/books.svg" alt="oopoooikj" />
+                <div class="login-logo-text">
                     <h1>LIBRARY</h1>
                     <div class="line"></div>
                     <p>Admin Panel</p>
                 </div>
-                <button class="close-menu" onclick="closeMenuBTN()"><img src="../assets/icon/cloneMenu.svg"
-                                                                         alt=""></button>
             </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#home"><img src="../assets/icon/books.svg" alt="">Home</a></li>
-                    <li><a href="#books"><img src="../assets/icon/books.svg" alt="">Books</a></li>
-                    <li><a href="#about-store"><img src="../assets/icon/books.svg" alt="">About</a></li>
-                    <li><a href="#join-us"><img src="../assets/icon/books.svg" alt="">Join Us</a></li>
-                    <li><a href="#contact-us"><img src="../assets/icon/books.svg" alt="">Contact</a></li>
-                    <li><a href="#"><img src="../assets/icon/books.svg" alt="">Logout</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <div class="container">
-            <div class="mobile-logo-container">
-                <img src="../assets/icon/books-mobile.svg" alt="">
+            <!-- ---------- -->
+            <div class="login_form">
                 <div>
-                    <h1>LIBRARY</h1>
-                    <div class="mobile-line"></div>
-                    <p>Book store</p>
+                    <h1>Welcome Admin</h1>
+                </div>
+
+                <div class="login_form_info">
+                    <label class="" for="usarname"></label>
+                    <input class="form_infouser" type="text" placeholder="Usarname" id="usarname" />
+
+                    <label for="password"></label>
+                    <input type="password" placeholder="Password" id="pasword" />
+                    <button id="admin_login_btn" class="login_button" type="submit">
+                        Join
+                    </button>
                 </div>
             </div>
-            <button class="close-menu" onclick="closeMenuBTN()"><img src="../assets/icon/cloneMenu.svg"
-                                                                     alt=""></button>
+            <!-- ---------- -->
+        </div>
 
-            <div class="open-menu">
-                <button onclick="openMenuBTN()"><img src="../assets/icon/hamburgerMenu.svg" alt=""></button>
-            </div>
-            <div class="mobile-logo">
-
-            </div>
-            <div class="account">
-                <img src="../assets/icon/profile.svg" alt="">
-                <span>Admin</span>
-            </div>
-
-            <h2 id="home">Home</h2>
-
-            <div class="add-book">
-                <div class="add_book_box">
-                    <div class="add_book_title">
-                        <h2>Add book</h2>
+        <!-- admin-panel.css -->
+        <div class="admin-panel">
+            <aside id="aside">
+                <div class="logo-container">
+                    <img src="../assets/icon/books.svg" alt="">
+                    <div class="logo-text">
+                        <h1>LIBRARY</h1>
+                        <div class="line"></div>
+                        <p>Admin Panel</p>
                     </div>
-                    <div class="search_container">
-                        <div class="search_title">
-                            <h4>Search book</h4>
-                        </div>
-                        <div class="search_box">
-                            <div class="search_input">
-                                <input type="text" placeholder="Search">
-                                <button class="search_btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26"
-                                         fill="none">
-                                        <path d="M7.8 17.0857C11.5555 17.0857 14.6 13.5843 14.6 9.26503C14.6 4.94578 11.5555 1.44434 7.8 1.44434C4.04446 1.44434 1 4.94578 1 9.26503C1 13.5843 4.04446 17.0857 7.8 17.0857Z"
-                                              stroke="#F2F2F2" stroke-width="2" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
-                                        <path d="M17.9999 24.5555L13.4666 18.5396" stroke="#F2F2F2" stroke-width="2"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="search_result">
-                                <ul>
-                                    <li>
-                                        <span><i class="far fa-clock"></i></span>
-                                        <span>Dan Brown</span>
-                                    </li>
-                                    <li>
-                                        <span><i class="far fa-clock"></i></span>
-                                        <span>Dan Brown</span>
-                                    </li>
-                                    <li>
-                                        <span><i class="far fa-clock"></i></span>
-                                        <span>Dan Brown</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <button class="close-menu" onclick="closeMenuBTN()"><img src="../assets/icon/cloneMenu.svg"
+                            alt=""></button>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#home"><img src="../assets/icon/books.svg" alt="">Home</a></li>
+                        <li><a href="#about-store"><img src="../assets/icon/books.svg" alt="">About</a></li>
+                        <li><a href="#join-us"><img src="../assets/icon/books.svg" alt="">Join Us</a></li>
+                        <li><a href="#books"><img src="../assets/icon/books.svg" alt="">Books</a></li>
+                        <li><a href="#contact-us"><img src="../assets/icon/books.svg" alt="">Contact</a></li>
+                        <li><a href="#"><img src="../assets/icon/books.svg" alt="">Logout</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div class="container">
+                <div class="mobile-logo-container">
+                    <img src="../assets/icon/books-mobile.svg" alt="">
+                    <div>
+                        <h1>LIBRARY</h1>
+                        <div class="mobile-line"></div>
+                        <p>Book store</p>
                     </div>
                 </div>
-            </div>
+                <button class="close-menu" onclick="closeMenuBTN()"><img src="../assets/icon/cloneMenu.svg"
+                        alt=""></button>
 
-            <div class="book-form">
-                <h4>Book form</h4>
-                <div class="add_book_box">
-                    <form action="">
-                        <div class="input_box">
-                            <label for="book_name">
-                                Book Name
-                            </label>
-                            <input type="text" id="book_name">
-                        </div>
-                        <div class="input_box">
-                            <label for="author_name">
-                                Author Name
-                            </label>
-                            <input type="text" id="author_name">
-                        </div>
-                        <div class="input_box">
-                            <label for="book_image_url">
-                                Book Image Url
-                            </label>
-                            <input type="text" id="book_image_url">
-                        </div>
-                        <div class="input_box">
-                            <label for="description">
-                                Description
-                            </label>
-                            <textarea name="" id="description"></textarea>
-                        </div>
-                        <div class="input_box">
-                            <label for="book_type">
-                                Book Type
-                                <button type="button"  class="btn-sm btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></button>
-                            </label>
-                            <select name="" id="book_type">
-                                <option value="">Something else</option>
-                            </select>
-                        </div>
-                        <button>Add</button>
-                    </form>
+                <div class="open-menu">
+                    <button onclick="openMenuBTN()"><img src="../assets/icon/hamburgerMenu.svg" alt=""></button>
                 </div>
-<!-- JOIN SECTION -->
-                <div class="join-us">
-                    <h4 id="join-us" class="title-tables">Join Us</h4>
-                    <table class="join-table">
-                        <thead class="join-first-title">
-                            <tr>
-                                <th>#</th>
-                                <th>Full Name</th>
-                                <th>Email Adress</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-body">
-                            <tr>
-                                <th>1</th>
-                                <td>Audrey Mckinney</td>
-                                <td>lisa.watson@example.com</td>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <td>Savannah Howard</td>
-                                <td>jeff.brown@example.com</td>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <td>Morris Cooper</td>
-                                <td>terra.hamilton@example.com</td>
-                            </tr>
-                            <tr>
-                                <th>4</th>
-                                <td>Victoria Lane</td>
-                                <td>deanna.curtis@example.com</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-<!-- BOOKS SECTION -->
-                <div class="books">
-                    <h5 id="books" class="title-tables">Books</h5>
-                    <table class="books-table">
-                        <thead class="join-first-title">
-                            <tr>
-                                <th>#</th>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Category</th>
-                                <th>Author</th>
-                               <th> <img src="../assets/icon/trash.svg" width="20px" height="20px" alt=""></th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-body">
-                            <tr>
-                                <th>1</th>
-                                <td class="book-icon">
-                                    <img  src="../assets/icon/angelbook.svg" alt="">
-                                    <p>Angel</p></td>
-                                <td>Lorem ipsum test...</td>
-                                <td>Dedectiv</td>
-                                <td>Dan Brown</td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                           
-                        </tbody>
-                    </table>
-                </div>
-<!-- CONTACT SECTION -->
-                <div class="contact-us">
-                    <h6 id="contact-us" class="title-tables">Contact Us</h6>
-                    <table class="books-table">
-                        <thead class="join-first-title">
-                            <tr>
-                                <th>#</th>
-                                <th>Full Name</th>
-                                <th>Address</th>
-                                <th>Email Address</th>
-                                <th>Phone Number</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-body">
-                            <tr>
-                                <th>1</th>
-                                <td>Audrey Mckinney</td>
-                                <td>1473 Ranchview Dr undefined San Jose</td>
-                                <td>lisa.watson@example.com</td>
-                                <td>(209) 555-0104</td>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <td>Savannah Howard</td>
-                                <td>1473 Ranchview Dr undefined San Jose</td>
-                                <td>jeff.brown@example.com</td>
-                                <td>(209) 555-0104</td>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <td>Morris Cooper</td>
-                                <td>1473 Ranchview Dr undefined San Jose</td>
-                                <td>terra.hamilton@example.com</td>
-                                <td>(209) 555-0104</td>
-                            </tr>
-                            <tr>
-                                <th>4</th>
-                                <td>Victoria Lane</td>
-                                <td>1473 Ranchview Dr undefined San Jose</td>
-                                <td>deanna.curtis@example.com</td>
-                                <td>(209) 555-0104</td>
-                            </tr>
-                        </tbody>
-                    </table>
-<!--            <h2 id="home">Home</h2>-->
-            </div>
-            <div class="about-store">
-                <h4 id="about-store">About Store</h4>
-                <div class="add_book_box">
-                    <form action="">
-                        <div class="input_box">
-                            <label for="title">
-                                Title
-                            </label>
-                            <input type="text" id="title">
-                        </div>
-                        <div class="input_box">
-                            <label for="image_url">
-                                Book Image Url
-                            </label>
-                            <input type="text" id="image_url">
-                        </div>
-                        <div class="input_box">
-                            <label for="description_book">
-                                Description
-                            </label>
-                            <textarea name="" id="description_book"></textarea>
-                        </div>
-                        <button>About info add</button>
-                    </form>
-                </div>
-            </div>
+                <div class="mobile-logo">
 
-            <div class="join-us">
-                <h4 id="join-us">Join Us</h4>
-            </div>
-
-            <div class="books">
-                <h5 id="books">Books</h5>
-            </div>
-
-            <div class="contact-us">
-                <h6 id="contact-us">Contact Us</h6>
-            </div>
-        </div>
-    </div>
-
-<!-- =========================== Modal ===========================-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Book Type</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="">
-                    <label for="type_name">Type name</label>
-                    <input type="text" class="form-control" id="type_name">
                 </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                <div class="account">
+                    <img src="../assets/icon/profile.svg" alt="">
+                    <span>Admin</span>
+                </div>
+
+                <div class="add-book">
+                    <div class="add_book_box">
+                        <div class="add_book_title">
+                            <h2 id="home">Add book</h2>
+                        </div>
+                        <div class="search_container">
+                            <div class="search_title">
+                                <h4>Search book</h4>
+                            </div>
+                            <div class="search_box">
+                                <div class="search_input">
+                                    <input type="text" placeholder="Search">
+                                    <button class="search_btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="26"
+                                            viewBox="0 0 19 26" fill="none">
+                                            <path
+                                                d="M7.8 17.0857C11.5555 17.0857 14.6 13.5843 14.6 9.26503C14.6 4.94578 11.5555 1.44434 7.8 1.44434C4.04446 1.44434 1 4.94578 1 9.26503C1 13.5843 4.04446 17.0857 7.8 17.0857Z"
+                                                stroke="#F2F2F2" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M17.9999 24.5555L13.4666 18.5396" stroke="#F2F2F2" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="search_result">
+                                    <ul>
+                                        <li>
+                                            <span><i class="far fa-clock"></i></span>
+                                            <span>Dan Brown</span>
+                                        </li>
+                                        <li>
+                                            <span><i class="far fa-clock"></i></span>
+                                            <span>Dan Brown</span>
+                                        </li>
+                                        <li>
+                                            <span><i class="far fa-clock"></i></span>
+                                            <span>Dan Brown</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-form">
+                    <h3>Book form</h3>
+                    <div class="add_book_box">
+                        <form action="">
+                            <div class="input_box">
+                                <label for="book_name">
+                                    Book Name
+                                </label>
+                                <input type="text" id="book_name">
+                            </div>
+                            <div class="input_box">
+                                <label for="author_name">
+                                    Author Name
+                                </label>
+                                <input type="text" id="author_name">
+                            </div>
+                            <div class="input_box">
+                                <label for="book_image_url">
+                                    Book Image Url
+                                </label>
+                                <input type="text" id="book_image_url">
+                            </div>
+                            <div class="input_box">
+                                <label for="description">
+                                    Description
+                                </label>
+                                <textarea name="" id="description"></textarea>
+                            </div>
+                            <div class="input_box">
+                                <label for="book_type">
+                                    Book Type
+                                    <button type="button" class="btn-sm btn" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="fas fa-plus"></i></button>
+                                </label>
+                                <select name="" id="book_type">
+                                    <option value="">Something else</option>
+                                </select>
+                            </div>
+                            <button>Add</button>
+                        </form>
+                    </div>
+
+                    <div class="about-store">
+                        <h4 id="about-store">About Store</h4>
+                        <div class="add_book_box">
+                            <form action="">
+                                <div class="input_box">
+                                    <label for="title">
+                                        Title
+                                    </label>
+                                    <input type="text" id="title">
+                                </div>
+                                <div class="input_box">
+                                    <label for="image_url">
+                                        Book Image Url
+                                    </label>
+                                    <input type="text" id="image_url">
+                                </div>
+                                <div class="input_box">
+                                    <label for="description_book">
+                                        Description
+                                    </label>
+                                    <textarea name="" id="description_book"></textarea>
+                                </div>
+                                <button>About info add</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- JOIN SECTION -->
+                    <div class="join-us">
+                        <h4 id="join-us" class="title-tables">Join Us</h4>
+                        <table class="join-table">
+                            <thead class="join-first-title">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Full Name</th>
+                                    <th>Email Adress</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <tr>
+                                    <th>1</th>
+                                    <td>Audrey Mckinney</td>
+                                    <td>lisa.watson@example.com</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Savannah Howard</td>
+                                    <td>jeff.brown@example.com</td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Morris Cooper</td>
+                                    <td>terra.hamilton@example.com</td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td>Victoria Lane</td>
+                                    <td>deanna.curtis@example.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- BOOKS SECTION -->
+                    <div class="books">
+                        <h5 id="books" class="title-tables">Books</h5>
+                        <table class="books-table">
+                            <thead class="join-first-title">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Author</th>
+                                    <th> <img src="../assets/icon/trash.svg" width="20px" height="20px" alt=""></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <tr>
+                                    <th>1</th>
+                                    <td class="book-icon">
+                                        <img src="../assets/icon/angelbook.svg" alt="">
+                                        <p>Angel</p>
+                                    </td>
+                                    <td>Lorem ipsum test...</td>
+                                    <td>Dedectiv</td>
+                                    <td>Dan Brown</td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- CONTACT SECTION -->
+                    <div class="contact-us">
+                        <h6 id="contact-us" class="title-tables">Contact Us</h6>
+                        <table class="books-table">
+                            <thead class="join-first-title">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Full Name</th>
+                                    <th>Address</th>
+                                    <th>Email Address</th>
+                                    <th>Phone Number</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <tr>
+                                    <th>1</th>
+                                    <td>Audrey Mckinney</td>
+                                    <td>1473 Ranchview Dr undefined San Jose</td>
+                                    <td>lisa.watson@example.com</td>
+                                    <td>(209) 555-0104</td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td>Savannah Howard</td>
+                                    <td>1473 Ranchview Dr undefined San Jose</td>
+                                    <td>jeff.brown@example.com</td>
+                                    <td>(209) 555-0104</td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td>Morris Cooper</td>
+                                    <td>1473 Ranchview Dr undefined San Jose</td>
+                                    <td>terra.hamilton@example.com</td>
+                                    <td>(209) 555-0104</td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td>Victoria Lane</td>
+                                    <td>1473 Ranchview Dr undefined San Jose</td>
+                                    <td>deanna.curtis@example.com</td>
+                                    <td>(209) 555-0104</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--            <h2 id="home">Home</h2>-->
+                    </div>
+                </div>
+
+                <!-- =========================== Modal ===========================-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Book Type</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="">
+                                    <label for="type_name">Type name</label>
+                                    <input type="text" class="form-control" id="type_name">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
 
-<script src="../js/admin-login.js"></script>
-<script src="../js/admin-panel.js"></script>
+    <script src="../js/admin-login.js"></script>
+    <script src="../js/admin-panel.js"></script>
 </body>
 
 </html>
