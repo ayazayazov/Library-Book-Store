@@ -1,0 +1,73 @@
+.add_book_box{
+    margin: 25px 0;
+}
+.add_book_box .add_book_title h2{
+    color: #333;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%; /* 58.856px */
+}
+.search_container  .search_title{
+    margin-bottom: 10px;
+}
+.search_container  .search_title h4{
+    color: #333;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 196.187%; /* 35.314px */
+}
+.search_input{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.search_input input{
+    border-radius: 34px;
+    border: 2px solid rgba(57, 31, 0, 0.48);
+    background: #FFF;
+    padding: 8px 34px;
+    max-width: 395px;
+    outline: none;
+    width: 100%;
+}
+.search_input button{
+    border-radius: 34px;
+    background: #FF8B00;
+    padding: 4px 24px;
+    cursor: pointer;
+    border: none;
+}
+.search_box{
+    position: relative;
+}
+.search_result{
+    border-radius: 35px;
+    background: #F1F0F0;
+    padding: 20px 30px;
+    max-width: 395px;
+    width: 100%;
+    /*position: absolute;*/
+    /*left: 0;*/
+}
+.search_result ul li{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    cursor: pointer;
+    /*padding: 5px 0;*/
+}
+.search_result ul li span{
+    color: #BCBCBC;
+    font-family: 'Preahvihear';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
