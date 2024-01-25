@@ -46,6 +46,7 @@
 
 .admin-panel{
     display: flex;
+    /* display: none; */
 }
 
 aside{
