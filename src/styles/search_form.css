@@ -32,6 +32,7 @@
     background: #FFF;
     padding: 8px 34px;
     max-width: 395px;
+    outline: none;
     width: 100%;
 }
 .search_input button{
@@ -58,6 +59,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 24px;
+    cursor: pointer;
     /*padding: 5px 0;*/
 }
 .search_result ul li span{
