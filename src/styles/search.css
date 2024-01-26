@@ -1,0 +1,81 @@
+body{
+    background-color: #FFFAF5;
+    padding: 0 20px 0 80px;
+
+}
+.search-line{
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    width: 100%;
+    
+}
+.search-title{
+color:  #241400;
+font-family: Montserrat;
+font-size: 36px;
+
+font-weight: 700;
+line-height: 196.187%; 
+}
+.input-search{
+color: #241400;
+font-family: "Crimson Text";
+font-size: 23px;
+font-weight: 400;
+border-radius: 5px;
+border: 1px solid #CECECE;
+padding-left: 28px;
+background: #FFF;
+height: 10%;
+width: 100%;
+}
+.btn-search{
+    border-radius: 5px;
+background: #E16A00;
+color: #FFF;
+text-align: center;
+font-family: "Crimson Text";
+font-size: 20px;
+font-weight: 400;
+border: none;
+padding: 12px 0 12px 0;
+}
+
+.arrows{
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    margin-top: 70px;
+   
+}
+
+.slider{
+    display: flex;
+    gap: 37px;
+    width: 85%;
+    background: #FFF;
+box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+padding: 64px 0 90px 31px;
+height: 100%;
+
+}
+.book-text{
+    padding-right: 56px;
+}
+.main-section{
+    display: flex;
+    flex-direction: row;
+    gap: 94px;
+    justify-content: space-between;  
+}
+.arrow-btn{
+    border: none;
+    background-color: #FFFAF5;
+    height: 50px;
+    
+    
+}
+
+
+
