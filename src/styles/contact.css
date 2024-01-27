@@ -1,0 +1,60 @@
+body{
+    background-color: #FFFAF5;
+    padding: 0 40px 0 100px;
+}
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.contact-title{
+    color:  #333;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 196.187%; 
+ 
+    box-sizing: border-box;
+}
+.inputs{
+    display: flex;
+    flex-wrap: wrap;
+  justify-content: center;
+    gap: 26px;
+}
+.contact-input{
+    width: 610px;
+    height: 74px;
+    color: #797667;
+font-family: "Crimson Text";
+font-size: 23px;
+font-weight: 400;
+border: 1px solid #CECECE;
+padding: 26px 0 24px 38px;
+}
+.contact-input-note{
+    width: 1248px;
+    height: 154px;
+    color: #797667;
+font-family: "Crimson Text";
+font-size: 23px;
+font-weight: 400;
+border: 1px solid #CECECE;
+padding: 13px 0 0 38px;
+
+}
+.send-btn{
+    width: 610px;
+height: 75px;
+background: #E16A00;
+border: none;
+color: #FFF;
+margin-top: 50px;
+text-align: center;
+font-family: "Crimson Text";
+font-size: 30px;
+font-weight: 400;
+}
