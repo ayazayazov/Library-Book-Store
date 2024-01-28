@@ -1,0 +1,49 @@
+body{
+    background-color:#FFFAF5;
+    padding: 0 58px 0 58px;
+}
+
+.about-section{
+    margin-top: 80px; /* header qoyulannan sonra düzəlməlidir, */
+    display: flex;
+    flex-direction: row;
+    gap: 72px;
+}
+.about-paragraph{
+    width: 50%;
+}
+
+.about-title{
+    color:  #241400;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 196.187%; /* 70.627px */
+
+}
+
+.about-text{
+    color:  #241400;
+font-family: Montserrat;
+font-size: 18px;
+font-weight: 400;
+line-height: 196.187%; /* 35.314px */
+}
+.about-img{
+    padding-top: 66px;
+}
+
+@media only screen and (max-width: 1200px){
+    .about-section{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 0;
+    }
+    body{
+        padding: 40px;
+    }
+    .about-paragraph{
+        text-align: center;
+    }
+}
