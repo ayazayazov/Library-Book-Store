@@ -43,8 +43,8 @@
 }
 
 .admin-panel {
-  /* display: flex; */
-  display: none;
+  display: flex;
+  /* display: none; */
 }
 
 aside {
@@ -77,7 +77,7 @@ aside {
 .mobile-line {
   width: 128px;
   height: 1px;
-  color: rgba(0, 0, 0, 0.59);
+  background-color: rgba(0, 0, 0, 0.59);
   margin-bottom: 4px;
 }
 
@@ -143,10 +143,12 @@ nav ul li a {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 400;
+  text-decoration: none;
 }
 
 nav ul li a:hover {
   text-decoration: underline;
+  color: #fff;
 }
 
 .container {

@@ -1,13 +1,10 @@
 body{
     background-color: #FFFAF5;
-    padding: 0 40px 0 100px;
+    /* padding: 0 40px 0 100px; */
 }
 
-
-.main{
-    display: flex;
-    flex-direction: column;
-  
+main{
+    padding: 32px 66px 0px 66px;
 }
 
 .contact-title{

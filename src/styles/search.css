@@ -1,7 +1,9 @@
 body{
     background-color: #FFFAF5;
-    padding: 0 20px 0 80px;
+}
 
+main{
+    padding: 32px 66px 0px 66px;
 }
 .search-line{
     display: flex;
