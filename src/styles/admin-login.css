@@ -4,8 +4,8 @@ main {
 }
 
 .admin-login{
-  display: block;
-  /* display: none; */
+  /* display: block; */
+  display: none;
 }
 
 .login_logocontainer {

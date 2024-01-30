@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Page</title>
-    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
     <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&family=Roboto:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet">
@@ -14,11 +18,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
           integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/header-footer.css">
     <link rel="stylesheet" href="../styles/about.css">
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <div class="mobile-logo-container">
+            <img src="../assets/icon/books-mobile.svg" alt="">
+            <div>
+                <h1>LIBRARY</h1>
+                <div class="mobile-line"></div>
+                <p>Book store</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="./catalog.html">Catalog</a></li>
+                <li><a style="font-weight: 700; text-decoration: underline; color: #E16A00;" href="">About Store</a>
+                </li>
+                <li><a href="./contact.html">Contact Us</a></li>
+                <li><a href="./search.html">Search</a></li>
+            </ul>
+        </nav>
+        <div class="account">
+            <img src="../assets/icon/profile.svg" alt="">
+            <span>Admin</span>
+        </div>
+    </header>
 
     <main>
         <div class="about-section">
@@ -39,7 +68,9 @@
         </div>
     </main>
 
-    <footer></footer>
+    <footer>
+
+    </footer>
 </body>
 
 </html>
