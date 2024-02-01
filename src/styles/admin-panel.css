@@ -1,212 +1,208 @@
 @media only screen and (min-width: 600px) {
-    .container{
-        padding: 48px 58px;
-    }
-    .mobile-logo-container{
-        display: none;
-    }
-    .open-menu{
-        display: none;
-
-    }
-    aside{
-        display: flex;
-    }
-    .account{
-        display: flex;
-    }
-
+  .container {
+    padding: 48px 58px;
+  }
+  .mobile-logo-container {
+    display: none;
+  }
+  .open-menu {
+    display: none;
+  }
+  aside {
+    display: flex;
+  }
+  .account {
+    display: flex;
+  }
 }
 
 @media only screen and (max-width: 600px) {
-    .container{
-        padding: 100px 58px;
-    }
-    .mobile-logo-container{
-        display: flex;
-        position: absolute;
-        top: 20px;
-    }
-    .open-menu{
-        display: flex;
-        /* justify-content: flex-end; */
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-    aside{
-        display: none;
-    }
-
-    .account{
-        display: none;
-    }
-
-}
-
-.admin-panel{
+  .container {
+    padding: 100px 58px;
+  }
+  .mobile-logo-container {
     display: flex;
+    position: absolute;
+    top: 20px;
+  }
+  .open-menu {
+    display: flex;
+    /* justify-content: flex-end; */
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  aside {
+    display: none;
+  }
+
+  .account {
+    display: none;
+  }
     /* display: none; */
 }
 
-aside{
-    /* display: flex; */
-    background-color: #720418;
-    width: 400px;
-    /* height: 100vh; */
-    position: sticky;
-    /* top: 0; */
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    padding: 92px 36px 0 36px;
+.admin-panel {
+  display: flex;
+  /* display: none; */
 }
 
-.mobile-logo-container{
-    /* display: flex; */
-    align-items: center;
-    gap: 10px;
-    font-family: 'Montserrat', sans-serif;
-    /* z-index: -1; */
+aside {
+  /* display: flex; */
+  background-color: #720418;
+  width: 400px;
+  /* height: 100vh; */
+  position: sticky;
+  /* top: 0; */
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  padding: 92px 36px 0 36px;
 }
 
-.mobile-logo-container h1{
-    color: #720418;
-    font-weight: 900;
-    font-size: 14px;
-    margin-bottom: 4px;
+.mobile-logo-container {
+  /* display: flex; */
+  align-items: center;
+  gap: 10px;
+  font-family: "Montserrat", sans-serif;
+  /* z-index: -1; */
 }
 
-.mobile-line{
-    width: 128px;
-    height: 1px;
-    color: rgba(0, 0, 0, 0.59);
-    margin-bottom: 4px;
+.mobile-logo-container h1 {
+  color: #720418;
+  font-weight: 900;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.mobile-line {
+  width: 128px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.59);
+  margin-bottom: 4px;
 }
 
 /* .mobile-logo-container img{
     width: 50px;
 } */
 
-.logo-container{
-    /* display: none; */
-    display: flex;
-    position: fixed;
-    top: 92px;
-    align-items: center;
-    gap: 10px;
-    /* margin-bottom: 20px; */
+.logo-container {
+  /* display: none; */
+  display: flex;
+  position: fixed;
+  top: 92px;
+  align-items: center;
+  gap: 10px;
+  /* margin-bottom: 20px; */
 }
 
-.logo-container h1{
-    font-weight: 900;
-    font-size: 14px;
-    margin-bottom: 10px;
+.logo-container h1 {
+  font-weight: 900;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
-.line{
-    width: 202px;
-    height: 1px;
-    background-color: #FFFFFF96;
-    margin-bottom: 10px;
+.line {
+  width: 202px;
+  height: 1px;
+  background-color: #ffffff96;
+  margin-bottom: 10px;
 }
 
-.logo-container p{
-    font-weight: 400;
-    font-size: 13px;
+.logo-container p {
+  font-weight: 400;
+  font-size: 13px;
 }
 
-.close-menu{
-    display: none;
-    background-color: transparent;
-    border: none;
+.close-menu {
+  display: none;
+  background-color: transparent;
+  border: none;
 }
 
-nav{
-    position: fixed;
-    top: 200px;
+nav {
+  position: fixed;
+  top: 200px;
 }
 
-nav ul{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-nav ul li img{
-    /* height: 60px; */
-    width: 36px;
+nav ul li img {
+  /* height: 60px; */
+  width: 36px;
 }
 
-nav ul li a{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
+nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
 }
 
-nav ul li a:hover{
-    text-decoration: underline;
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #fff;
 }
 
-
-
-.container{
-    /* padding: 48px 58px; */
-    width: 100%;
-    background-color: #FFFAF5;
-    position: static;
-    left: 352px;
+.container {
+  /* padding: 48px 58px; */
+  width: 100%;
+  background-color: #fffaf5;
+  position: static;
+  left: 352px;
 }
 
-.open-menu{
-    height: 30px;
-    width: 50px;
-    /* display: flex; */
-    /* justify-content: flex-end; */
-
+.open-menu {
+  height: 30px;
+  width: 50px;
+  /* display: flex; */
+  /* justify-content: flex-end; */
 }
 
-.open-menu button{
-    background-color: transparent;
-    border: none;
+.open-menu button {
+  background-color: transparent;
+  border: none;
 }
 
-.account{
-    /* display: flex; */
-    justify-content: flex-end;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 48px;
+.account {
+  /* display: flex; */
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 48px;
 }
 
-.account span{
-    margin-top: 6px;
-    font-family: 'Roboto', sans-serif;
+.account span {
+  margin-top: 6px;
+  font-family: "Roboto", sans-serif;
 }
 
-.add-book{
-    margin-bottom: 100px;
-
+.add-book {
+  margin-bottom: 100px;
 }
 
-.book-form{
-    margin-bottom: 100px;
-
+.book-form {
+  margin-bottom: 100px;
 }
 
-.about-store{
-    margin-bottom: 100px;
-
+.about-store {
+  margin-bottom: 100px;
 }
 
-.join-us{
-    margin-bottom: 100px;
-
+.join-us {
+  margin-bottom: 100px;
 }
 
+.books {
+  margin-bottom: 100px;
+}
 .title-tables{
     color: #333;
 font-family: Montserrat;
@@ -272,7 +268,6 @@ letter-spacing: 0.14px;
 }
 
 
-.contact-us{
-    margin-bottom: 100px;
-
+.contact-us {
+  margin-bottom: 100px;
 }
