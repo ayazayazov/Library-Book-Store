@@ -13,6 +13,37 @@ header{
     header{
         padding: 32px 66px 0px 66px ;
     }
+    .popular{
+      display: flex;
+    }
+    .information{
+      display: flex;
+    }
+    .help{
+      display: flex;
+    }
+    .phone-num{
+      display: flex;
+    }
+    .footer-container{
+      padding: 52px 224px 0 214px;
+      
+    }
+    .footer-content{
+      justify-content: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      /* gap: 150px; */
+    }
+    .mobile-footer-nav{
+      display: none;
+    }
+    .mobile-footer-rights-line{
+      display: none;
+    }
+    .rights{
+      margin-top: 50px;
+    }
   }
 
 @media only screen and (max-width: 430px) {
@@ -20,11 +51,53 @@ header{
         display: none;
     }
     header{
-        padding: 16px 14px 0px 14px ;
+      padding: 16px 14px 0px 14px ;
+  }
+    .popular{
+      display: none;
+    }
+    .information{
+      display: none;
+    }
+    .help{
+      display: none;
+    }
+    .phone-num{
+      display: none;
+    }
+    .footer-container{
+      padding: 20px 0 0 0;
+      justify-content: center;
+    }
+    .footer-content{
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    .mobile-footer-nav{
+      display: block;
+    }
+    .mobile-footer-nav ul{
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
     }
   }
 
-.mobile-logo-container {
+  .mobile-footer-rights-line{
+    margin-top: 40px;
+    height: 1px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.59);
+  }
+
+  .mobile-footer-nav ul a{
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+  }
+
+  .mobile-logo-container {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -36,13 +109,40 @@ header{
     color: #720418;
     font-weight: 900;
     font-size: 14px;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
   
   .mobile-line {
     width: 128px;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.59);
+    margin-bottom: 4px;
+  }
+
+.footer-logo{
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Montserrat", sans-serif;
+    /* z-index: -1; */
+  }
+  
+  .footer-logo-container h1 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  
+  .footer-logo-line {
+    width: 128px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.59);
     margin-bottom: 2px;
   }
 
@@ -69,3 +169,78 @@ nav ul a{
     margin-top: 6px;
     font-family: "Roboto", sans-serif;
   }
+
+
+footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 206px;
+  color: #fff;
+}
+
+.footer-container{
+  width: 100%;
+  margin-top: 104px;
+  /* padding: 52px 224px 0 214px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: #391F00;
+}
+
+.footer-content{
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+  /* gap: 150px; */
+}
+
+.popular, .information, .help, .phone-num{
+  /* display: flex; */
+  flex-direction: column;
+  gap: 10px;
+  font-family: Montserrat;
+}
+
+.popular p, .information p, .help p, .phone-num p{
+  font-size: 18px;
+}
+
+.popular span, .information span, .help span, .phone-num span{
+  font-size: 13px;
+}
+
+.phone-num{
+  justify-content: center;
+}
+
+.phone-num p{
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.phone-num button{
+  background-color: transparent;
+  color: #E16A00;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border: 1px solid #E16A00;
+}
+
+.rights{
+  background-color: #391F00;
+  width: 100%;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  height: 50px;
+  padding: 12px 0;
+}

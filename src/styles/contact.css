@@ -1,3 +1,15 @@
+@media only screen and (max-width: 1378px) {
+    .contact-input-note{
+        width: 610px;
+    }
+  }
+
+@media only screen and (min-width: 1378px){
+    .contact-input-note{
+    width: 1248px;
+    }
+}
+
 body{
     background-color: #FFFAF5;
     /* padding: 0 40px 0 100px; */
@@ -33,7 +45,6 @@ border: 1px solid #CECECE;
 padding: 26px 0 24px 38px;
 }
 .contact-input-note{
-    width: 1248px;
     height: 154px;
     color: #797667;
 font-family: "Crimson Text";

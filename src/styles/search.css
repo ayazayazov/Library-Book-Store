@@ -14,7 +14,7 @@ main{
 }
 .search-title{
 color:  #241400;
-font-family: Montserrat;
+font-family: "Montserrat", sans-serif;
 font-size: 36px;
 
 font-weight: 700;
@@ -22,7 +22,7 @@ line-height: 196.187%;
 }
 .input-search{
 color: #241400;
-font-family: "Crimson Text";
+font-family: "Roboto", sans-serif;
 font-size: 23px;
 font-weight: 400;
 border-radius: 5px;
@@ -37,7 +37,7 @@ width: 100%;
 background: #E16A00;
 color: #FFF;
 text-align: center;
-font-family: "Crimson Text";
+font-family: "Roboto", sans-serif;
 font-size: 20px;
 font-weight: 400;
 border: none;
@@ -65,8 +65,27 @@ height: 100%;
     display: flex;
     gap: 38px;
 }
+
+.texts h3{
+    font-weight: 600;
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 14px;
+}
+
+.texts p:nth-child(2){
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 14px;
+
+}
+
 .book-text{
+    font-weight: 300;
     padding-right: 56px;
+    font-family: "Montserrat", sans-serif;
+    line-height: 170%;
 }
 .main-section{
     display: flex;
@@ -82,8 +101,8 @@ height: 100%;
     
 } 
 
-@media only screen and (max-width: 1200px){
-    body{
+@media only screen and (max-width: 1000px){
+    main{
         padding: 0;
     }
     .book-text{
