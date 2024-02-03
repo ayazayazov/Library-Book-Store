@@ -1,3 +1,14 @@
+body{
+  position: relative;
+}
+
+.join-us-modal{
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+}
+
 header{
     display: flex;
     align-items: center;
@@ -6,7 +17,38 @@ header{
     /* padding: 32px 66px 0 215px ; */
 }
 
+.mobile-menu-btn{
+  border: none;
+  background-color: transparent;
+}
+
+.mobile-menu{
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(36, 20, 0, 0.9);
+}
+
+.mobile-menu nav ul{
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu nav ul li a{
+  color: #fff;
+  font-size: 30px;
+}
+
 @media only screen and (min-width: 430px) {
+  .account{
+    display: flex;
+  }
+    .mobile-menu-btn{
+      display: none;
+    }
     nav{
         display: block;
     }
@@ -47,6 +89,12 @@ header{
   }
 
 @media only screen and (max-width: 430px) {
+  .account{
+    display: none;
+  }
+  .mobile-menu-btn{
+    display: block;
+  }
     nav{
         display: none;
     }
@@ -159,13 +207,15 @@ nav ul a{
 }
 
 .account {
-    display: flex;
+    /* display: flex; */
     justify-content: flex-end;
     align-items: center;
     gap: 8px;
   }
   
-  .account span {
+  .account button {
+    background-color: transparent;
+    border: none;
     margin-top: 6px;
     font-family: "Roboto", sans-serif;
   }
