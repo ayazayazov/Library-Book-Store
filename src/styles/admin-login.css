@@ -1,19 +1,19 @@
 main {
   background-color: #720418;
-  height: 100%;
 }
 
-.admin-login{
-  /* display: block; */
-  display: none;
+.admin-login {
+  display: block;
+  /* display: none; */
+  padding-bottom: 10px;
 }
 
 .login_logocontainer {
   display: flex;
   gap: 12px;
   padding-left: 35px;
-  padding-top: 74px;
-  padding-bottom: 140px;
+  padding-top: 44px;
+  padding-bottom: 80px;
 }
 .login-logo-text {
   /* background-color: #720418; */
@@ -27,11 +27,11 @@ main {
   display: flex;
   flex-direction: column;
   width: 662px;
-  height: 544px;
+  /* height: 544px; */
   background-color: #fff;
   margin-left: 470px;
   margin-right: 484px;
-  padding-top: 68px;
+  padding-top: 48px;
   /* padding-bottom: 38px; */
 }
 .login_form h1 {
@@ -40,10 +40,10 @@ main {
   font-family: Montserrat;
   font-size: 44px;
   font-weight: 700;
-  padding-left: 130px;
-  padding-right: 130px;
-  padding-bottom: 18px;
-  width: 404px;
+  padding-left: 120px;
+  padding-right: 120px;
+  /* padding-bottom: 48px; */
+  /* width: 404px; */
   height: 81px;
 }
 
@@ -74,5 +74,6 @@ main {
   border-radius: 5px;
   border: 1px solid #cecece;
   background: #e16a00;
-  margin-top: 84px;
+  margin-top: 44px;
+  margin-bottom: 44px;
 }
