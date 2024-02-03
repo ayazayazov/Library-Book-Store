@@ -1,4 +1,3 @@
-
 /* ======================== HTML elements ========================= */
 let contact_form = document.getElementById("contact_form");
 let name_input = document.querySelector("#name");
@@ -6,6 +5,7 @@ let phone_input = document.querySelector("#phone");
 let address_input = document.querySelector("#address");
 let email_input = document.querySelector("#email");
 let alert_box = document.querySelector(".alert_box")
+let contact_list = document.querySelector("#contact_list")
 
 
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
@@ -67,7 +67,7 @@ function writePushContactData(collection, data) {
     }
 }
 
-contact_form.addEventListener("submit", function (e) {
+contact_form?.addEventListener("submit", function (e) {
     e.preventDefault();
     let name = e.target.name.value;
     let email = e.target.email.value;
@@ -120,7 +120,45 @@ contact_form.addEventListener("submit", function (e) {
         </div>
         `
     }
-    setTimeout(()=>{
+    setTimeout(() => {
         alert_box.innerHTML = ""
-    },2000)
+    }, 2000)
 })
+
+onValue(ref(db, "contacts"), renderContacts);
+
+
+function renderContacts(snaphot) {
+    const data = convertData(snaphot.val());
+    let data_list = data.map((item,index)=>{
+        return `
+            <tr data-id="${item.id}">
+                <th>${index+1}</th>
+                <td>${item.name}</td>
+                <td>${item.address.substr(0,10)}${item.address.length > 10? '...' : ''}</td>
+                <td>${item.email}</td>
+                <td>${item.phone}</td>
+                <td>${item.note.substr(0,10)}${item.note.length > 10? '...' : ''} </td>
+                <td><span class="text-danger"><i class="fas fa-trash"></i> </span></td>
+            </tr>
+        `
+    }).join("")
+    contact_list.innerHTML = data_list;
+    return data
+}
+function convertData(d) {
+    const newData = Object.entries(d);
+
+    const myNewData = newData.map((arr) => {
+        const newObj = {
+            id: arr[0],
+            ...arr[1],
+        };
+
+        return newObj;
+    });
+
+    return myNewData;
+}
+
+
