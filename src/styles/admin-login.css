@@ -1,79 +1,108 @@
-main {
-  background-color: #720418;
-}
-
 .admin-login {
-  display: block;
+  background-color: #720418;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* display: block; */
   /* display: none; */
-  padding-bottom: 10px;
 }
 
 .login_logocontainer {
   display: flex;
-  gap: 12px;
-  padding-left: 35px;
-  padding-top: 44px;
-  padding-bottom: 80px;
+  align-items: center;
+  gap: 8px;
+  padding: 34px 0 34px 34px;
 }
-.login-logo-text {
-  /* background-color: #720418; */
-  width: 400px;
-  color: #fff;
+
+.login-logo-text h1{
+  font-size: 14px;
+  font-weight: 900;
   font-family: "Montserrat", sans-serif;
-  padding-top: 20px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 6px;
+}
+
+.login-line{
+  width: 202px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.59);
+  margin-bottom: 6px;
+}
+
+.login-logo-text p{
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(255, 255, 255);
 }
 
 .login_form {
-  display: flex;
-  flex-direction: column;
-  width: 662px;
-  /* height: 544px; */
+  margin: auto;
   background-color: #fff;
-  margin-left: 470px;
-  margin-right: 484px;
-  padding-top: 48px;
-  /* padding-bottom: 38px; */
+  padding: 68px 50px 34px 50px;
 }
 .login_form h1 {
+  margin-bottom: 48px;
   color: #000;
   text-align: center;
-  font-family: Montserrat;
+  font-family: "Montserrat", sans-serif;
   font-size: 44px;
   font-weight: 700;
-  padding-left: 120px;
-  padding-right: 120px;
-  /* padding-bottom: 48px; */
-  /* width: 404px; */
-  height: 81px;
 }
 
-.login_form_info input {
-  color: #797667;
-  font-family: "Crimson Text";
-  font-size: 19px;
-  font-weight: 400;
-  padding: 18px 400px 18px 50px;
-}
 .login_form_info {
   display: flex;
   flex-direction: column;
-  margin-right: 54px;
-  margin-left: 54px;
 }
+
+.login_form_info input {
+  outline: none;
+  width: 552px;
+  height: 74px;
+  border: 1px solid rgb(206, 206, 206);
+  color: rgb(121, 118, 103);
+  font-size: 24px;
+  font-weight: 400;
+  padding: 10px;
+}
+
 .form_infouser {
   margin-bottom: 34px;
 }
 .login_button {
-  padding-top: 20px;
-  padding-bottom: 6px;
+  height: 74px;
   color: #fff;
   text-align: center;
   font-family: "Crimson Text";
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
-  border: 1px solid #cecece;
+  border: none;
   background: #e16a00;
-  margin-top: 44px;
-  margin-bottom: 44px;
+  margin-top: 84px;
+}
+
+@media only screen and (max-width: 680px){
+  .login_form_info input{
+    width: 100%;
+  }
+  .login_form{
+    margin: 68px 40px 0 40px;
+    padding: 26px 18px 42px 18px;
+  }
+  .login_form h1{
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .login_button{
+    margin-top: 26px;
+  }
+  .form_infouser{
+    margin-bottom: 22px;
+  }
+  .login_button{
+    height: 50px;
+  }
+  .login_form_info input{
+    height: 40px;
+  }
 }

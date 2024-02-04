@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
     <link rel="icon" href="../assets/icon/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
         integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/admin-login.css">
     <link rel="stylesheet" href="../styles/admin-panel.css">
     <link rel="stylesheet" href="../styles/admin-form.css">
@@ -30,10 +30,10 @@
         <div class="admin-login" style="display: none">
             <!-- -------- -->
             <div class="login_logocontainer">
-                <img src="../assets/icon/books.svg" alt="oopoooikj" />
+                <img src="../assets/icon/books.svg" alt="books" />
                 <div class="login-logo-text">
                     <h1>LIBRARY</h1>
-                    <div class="line"></div>
+                    <div class="login-line"></div>
                     <p>Admin Panel</p>
                 </div>
             </div>
@@ -44,10 +44,10 @@
                 </div>
 
                 <div class="login_form_info">
-                    <label class="" for="usarname"></label>
+                    <!-- <label class="" for="usarname"></label> -->
                     <input class="form_infouser" type="text" placeholder="Usarname" id="usarname" />
 
-                    <label for="password"></label>
+                    <!-- <label for="password"></label> -->
                     <input type="password" placeholder="Password" id="pasword" />
                     <button id="admin_login_btn" class="login_button" type="submit">
                         Join
