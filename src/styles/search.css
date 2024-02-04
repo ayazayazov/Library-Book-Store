@@ -3,7 +3,7 @@ body{
 }
 
 main{
-    padding: 32px 66px 0px 66px;
+    padding: 66px 66px 0px 66px;
 }
 .search-line{
     display: flex;
@@ -59,7 +59,7 @@ padding: 12px 0 12px 0;
 box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
 padding: 64px 0 90px 31px;
 height: 100%;
-
+margin-top: 100px;
 }
 .texts{
     display: flex;
