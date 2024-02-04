@@ -1,68 +1,77 @@
 @media only screen and (max-width: 1378px) {
-    .contact-input-note{
+    .contact-input-note {
         width: 610px;
-    }
-  }
-
-@media only screen and (min-width: 1378px){
-    .contact-input-note{
-    width: 1248px;
     }
 }
 
-body{
+@media only screen and (min-width: 1378px) {
+    .contact-input-note {
+        width: 1248px;
+    }
+}
+
+body {
     background-color: #FFFAF5;
     /* padding: 0 40px 0 100px; */
 }
 
-main{
+main {
     padding: 32px 66px 0px 66px;
 }
 
-.contact-title{
-    color:  #333;
+.contact-title {
+    color: #333;
     font-family: Montserrat;
     font-size: 36px;
     font-weight: 900;
-    line-height: 196.187%; 
- 
+    line-height: 196.187%;
+
     box-sizing: border-box;
 }
-.inputs{
+
+.inputs {
     display: flex;
     flex-wrap: wrap;
-  justify-content: center;
+    justify-content: center;
     gap: 26px;
 }
-.contact-input{
+
+.contact-input {
     width: 610px;
     height: 74px;
     color: #797667;
-font-family: "Crimson Text";
-font-size: 23px;
-font-weight: 400;
-border: 1px solid #CECECE;
-padding: 26px 0 24px 38px;
+    margin-bottom: 36px;
+    font-family: "Crimson Text";
+    font-size: 23px;
+    font-weight: 400;
+    border: 1px solid #CECECE;
+    padding: 26px 0 24px 38px;
 }
-.contact-input-note{
+
+.contact-input-note {
     height: 154px;
     color: #797667;
-font-family: "Crimson Text";
-font-size: 23px;
-font-weight: 400;
-border: 1px solid #CECECE;
-padding: 13px 0 0 38px;
+    font-family: "Crimson Text";
+    font-size: 23px;
+    font-weight: 400;
+    border: 1px solid #CECECE;
+    padding: 13px 0 0 38px;
 
 }
-.send-btn{
+
+.send-btn {
     width: 610px;
-height: 75px;
-background: #E16A00;
-border: none;
-color: #FFF;
-margin-top: 50px;
-text-align: center;
-font-family: "Crimson Text";
-font-size: 30px;
-font-weight: 400;
+    height: 75px;
+    background: #E16A00;
+    border: none;
+    color: #FFF;
+    margin-top: 50px;
+    text-align: center;
+    font-family: "Crimson Text";
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.is-invalid {
+    border-color: red !important;
 }
