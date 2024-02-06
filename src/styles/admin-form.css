@@ -76,3 +76,11 @@
 .add_book_box form  button i{
     color: #fff;
 }
+.modal_alert.show,
+.modal_data.show{
+    display: block;
+}
+.modal_alert,
+.modal_data{
+    background-color: rgba(0,0,0,0.4);
+}
