@@ -108,7 +108,7 @@
                 <div class="add-book">
                     <div class="add_book_box">
                         <div class="add_book_title">
-                            <h2 id="home">Add book</h2>
+                            <h2 id="home">Home</h2>
                         </div>
                         <div class="search_container">
                             <div class="search_title">
@@ -116,23 +116,19 @@
                             </div>
                             <div class="search_box">
                                 <div class="search_input">
-                                    <input type="text" placeholder="Search">
-                                    <button class="search_btn"><img src="../assets/icon/search-btn.svg" alt=""></button>
+                                    <img src="../assets/icon/search-btn.svg" alt="">
+                                    <input id="bookSearchInput" onkeyup="processChange()" type="text"
+                                        placeholder="Search">
+                                    <button onclick="clearInput()" class="clearInputBtn"><img
+                                            src="../assets/icon/close.svg" alt=""></button>
                                 </div>
-                                <div class="search_result">
-                                    <ul>
-                                        <li>
+                                <div id="searchResult" class="search_result">
+                                    <ul id="bookSearchList" class="book-search-list scroll">
+                                        <!-- <li>
                                             <span><i class="far fa-clock"></i></span>
                                             <span>Dan Brown</span>
-                                        </li>
-                                        <li>
-                                            <span><i class="far fa-clock"></i></span>
-                                            <span>Dan Brown</span>
-                                        </li>
-                                        <li>
-                                            <span><i class="far fa-clock"></i></span>
-                                            <span>Dan Brown</span>
-                                        </li>
+                                            <span>Book name</span>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -344,6 +340,7 @@
     <script src="../js/admin-panel.js"></script>
     <script type="module" src="../js/contact-us.js"></script>
     <script type="module" src="../js/admin-join-us.js"></script>
+    <script src="../js/admin-add-book.js"></script>
 </body>
 
 </html>
