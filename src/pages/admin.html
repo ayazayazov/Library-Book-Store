@@ -108,7 +108,7 @@
                 <div class="add-book">
                     <div class="add_book_box">
                         <div class="add_book_title">
-                            <h2 id="home">Add book</h2>
+                            <h2 id="home">Home</h2>
                         </div>
                         <div class="search_container">
                             <div class="search_title">
@@ -116,33 +116,20 @@
                             </div>
                             <div class="search_box">
                                 <div class="search_input">
-                                    <input type="text" placeholder="Search">
-                                    <button class="search_btn">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="26"
-                                            viewBox="0 0 19 26" fill="none">
-                                            <path
-                                                d="M7.8 17.0857C11.5555 17.0857 14.6 13.5843 14.6 9.26503C14.6 4.94578 11.5555 1.44434 7.8 1.44434C4.04446 1.44434 1 4.94578 1 9.26503C1 13.5843 4.04446 17.0857 7.8 17.0857Z"
-                                                stroke="#F2F2F2" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M17.9999 24.5555L13.4666 18.5396" stroke="#F2F2F2" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </button>
+                                    <img src="../assets/icon/search-btn.svg" alt="">
+                                    <input id="bookSearchInput" onkeyup="processChange()" type="text"
+                                        placeholder="Search">
+                                    <button onclick="clearInput()" class="clearInputBtn"><img
+                                            src="../assets/icon/close.svg" alt=""></button>
                                 </div>
-                                <div class="search_result">
-                                    <ul>
-                                        <li>
+                                <div id="searchResult" class="search_result">
+                                    <ul id="bookSearchList" class="book-search-list scroll">
+
+                                        <!-- <li>
                                             <span><i class="far fa-clock"></i></span>
                                             <span>Dan Brown</span>
-                                        </li>
-                                        <li>
-                                            <span><i class="far fa-clock"></i></span>
-                                            <span>Dan Brown</span>
-                                        </li>
-                                        <li>
-                                            <span><i class="far fa-clock"></i></span>
-                                            <span>Dan Brown</span>
-                                        </li>
+                                            <span>Book name</span>
+                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -153,7 +140,7 @@
                 <div class="book-form">
                     <h3>Book form</h3>
                     <div class="add_book_box">
-                        <form action="">
+                        <div class="form">
                             <div class="input_box">
                                 <label for="book_name">
                                     Book Name
@@ -189,7 +176,7 @@
                                 </select>
                             </div>
                             <button>Add</button>
-                        </form>
+                        </div>
                     </div>
 
 
@@ -197,27 +184,27 @@
                 <div class="about-store">
                     <h4 id="about-store">About Store</h4>
                     <div class="add_book_box">
-                        <form action="">
+                        <div class="form">
                             <div class="input_box">
                                 <label for="title">
                                     Title
                                 </label>
-                                <input type="text" id="title">
+                                <input type="text" id="aboutTitle">
                             </div>
                             <div class="input_box">
                                 <label for="image_url">
                                     Book Image Url
                                 </label>
-                                <input type="text" id="image_url">
+                                <input type="text" id="aboutImgURL">
                             </div>
                             <div class="input_box">
                                 <label for="description_book">
                                     Description
                                 </label>
-                                <textarea name="" id="description_book"></textarea>
+                                <textarea name="" id="aboutDescription"></textarea>
                             </div>
-                            <button>About info add</button>
-                        </form>
+                            <button id='aboutInfoAddBtn'>About info add</button>
+                        </div>
                     </div>
                 </div>
                 <!-- JOIN SECTION -->
@@ -231,27 +218,12 @@
                                 <th>Email Adress</th>
                             </tr>
                         </thead>
-                        <tbody class="table-body">
-                            <tr>
+                        <tbody id="joinUsTableBody" class="table-body">
+                            <!-- <tr>
                                 <th>1</th>
                                 <td>Audrey Mckinney</td>
                                 <td>lisa.watson@example.com</td>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <td>Savannah Howard</td>
-                                <td>jeff.brown@example.com</td>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <td>Morris Cooper</td>
-                                <td>terra.hamilton@example.com</td>
-                            </tr>
-                            <tr>
-                                <th>4</th>
-                                <td>Victoria Lane</td>
-                                <td>deanna.curtis@example.com</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -407,6 +379,9 @@
     <script src="../js/admin-login.js"></script>
     <script src="../js/admin-panel.js"></script>
     <script type="module" src="../js/contact-us.js"></script>
+    <script type="module" src="../js/admin-join-us.js"></script>
+    <script src="../js/admin-add-book.js"></script>
+    <script type="module" src="../js/admin-about.js"></script>
 </body>
 
 </html>

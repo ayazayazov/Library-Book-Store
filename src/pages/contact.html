@@ -7,13 +7,13 @@
     <title>Contact Page</title>
     <link rel="icon" href="../assets/icon/logo.svg" type="image/x-icon">
     <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
-          integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/contact.css">
     <link rel="stylesheet" href="../styles/header-footer.css">
@@ -24,6 +24,22 @@
     <div class="mobile-logo-container">
         <img src="../assets/icon/books-mobile.svg" alt="">
     </div>
+    <div id="overlay-back"></div>
+    <div class="join-us-modal">
+        <span>Join Us</span>
+        <div class="join-us-form">
+            <input id="joinUsFullnameInput" type="text" placeholder="Full Name">
+            <input id="joinUsEmailInput" type="email" placeholder="Email">
+        </div>
+        <button class="joinBtn" id="joinBtn">Join</button>
+        <div class="joinUsAlertBox">
+            <!-- <div class="alert mt-3 alert-success" role="alert">
+                Your request has been sent successfully!
+            </div> -->
+        </div>
+    </div>
+        <!-- <div class="mobile-logo-container"> -->
+        <!-- <img src="../assets/icon/books-mobile.svg" alt=""> -->
         <div class="mobile-logo-container">
             <img src="../assets/icon/books-mobile.svg" alt="">
             <div>
@@ -37,69 +53,96 @@
                 <li><a href="../../index.html">Home</a></li>
                 <li><a href="./catalog.html">Catalog</a></li>
                 <li><a href="./about.html">About Store</a></li>
-                <li><a style="font-weight: 700; text-decoration: underline; color: #E16A00;" href="">Contact Us</a></li>
+                <li><a style="font-weight: 700; text-decoration: underline; color: #E16A00;" href="">Contact Us</a>
+                </li>
                 <li><a href="./search.html">Search</a></li>
             </ul>
         </nav>
         <div class="account">
             <img src="../assets/icon/profile.svg" alt="">
-            <button id="joinUs">Join us</button>
+            <button id="joinUsBtn">Join us</button>
         </div>
         <button class="mobile-menu-btn"><img src="../assets/icon/hamburgerMenu.svg" alt=""></button>
     </header>
 
+    <main class="main">
+        <div>
+            <h1 class="contact-title">
+                Contact Us
+            </h1>
+        </div>
+        <form action="" id="contact_form">
+            <div class="inputs">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input class="contact-input" id="name" name="name" type="text" placeholder="Full Name">
+                    </div>
+                    <div class="col-lg-6">
+                        <input class="contact-input" id="email" name="email" type="email" placeholder="Email">
+                    </div>
+                    <div class="col-lg-6">
+                        <input class="contact-input" id="address" name="address" type="text" placeholder="Address">
+                    </div>
+                    <div class="col-lg-6">
+                        <input class="contact-input" id="phone" name="phone" type="text" placeholder="Phone">
+                    </div>
+                    <div class="col-lg-6">
+                        <textarea class="contact-input-note" id="note" name="note" type="text"
+                            placeholder="Note"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="send-btn">Send</button>
+            </div>
+            <div class="alert_box"></div>
+        </form>
 
+    </main>
 
-<main class="main">
-    <div>
-        <h1 class="contact-title">
-            Contact Us
-        </h1>
-    </div>
-    <form action="" id="contact_form">
-        <div class="inputs">
-            <div class="row">
-                <div class="col-lg-6">
-                    <input class="contact-input" id="name" name="name" type="text" placeholder="Full Name">
+    <footer>
+        <div class="social-media">
+            <img src="../assets/image/social-media-group.svg" alt="">
+        </div>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-container">
+                        <img src="../assets/icon/books-footer-logo.svg" alt="">
+                        <div>
+                            <h1>LIBRARY</h1>
+                            <div class="footer-logo-line"></div>
+                            <p>BOOK STORE</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <input class="contact-input" id="email" name="email" type="email" placeholder="Email">
+                <div class="popular">
+                    <p>Popular</p>
+                    <span>Programming</span>
+                    <span>Books for children</span>
+                    <span>Psychology</span>
+                    <span>Business</span>
                 </div>
-                <div class="col-lg-6">
-                    <input class="contact-input" id="address" name="address" type="text" placeholder="Address">
+                <div class="information">
+                    <p>Information</p>
+                    <span>Delivery</span>
+                    <span>Payment</span>
+                    <span>About the store</span>
                 </div>
-                <div class="col-lg-6">
-                    <input class="contact-input" id="phone" name="phone" type="text" placeholder="Phone">
+                <div class="help">
+                    <p>Help</p>
+                    <span>Contacts</span>
+                    <span>Purchase returns</span>
+                    <span>Buyer help</span>
                 </div>
                 <div class="col-lg-12">
                     <textarea class="contact-input-note" id="note" name="note" type="text"
                               placeholder="Note"></textarea>
+                <div class="phone-num">
+                    <p>+38 (071) 339-16-26</p>
+                    <button>Request a call</button>
                 </div>
-            </div>
-            <button type="submit" class="send-btn">Send</button>
-        </div>
-        <div class="alert_box"></div>
-    </form>
-
-</main>
-
-<footer>
-    <div class="social-media">
-        <img src="../assets/image/social-media-group.svg" alt="">
-    </div>
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <div class="footer-logo-container">
-                    <img src="../assets/icon/books-footer-logo.svg" alt="">
-                    <div>
-                        <h1>LIBRARY</h1>
-                        <div class="footer-logo-line"></div>
-                        <p>BOOK STORE</p>
-                    </div>
                 <div class="mobile-footer-nav">
                     <ul>
-                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="./home.html">Home</a></li>
                         <li><a href="./catalog.html">Catalog</a></li>
                         <li><a href="./about.html">About Store</a></li>
                         <li><a href="./contact.html">Contact Us</a></li>
@@ -107,46 +150,16 @@
                     </ul>
                 </div>
             </div>
-            <div class="popular">
-                <p>Popular</p>
-                <span>Programming</span>
-                <span>Books for children</span>
-                <span>Psychology</span>
-                <span>Business</span>
-            </div>
-            <div class="information">
-                <p>Information</p>
-                <span>Delivery</span>
-                <span>Payment</span>
-                <span>About the store</span>
-            </div>
-            <div class="help">
-                <p>Help</p>
-                <span>Contacts</span>
-                <span>Purchase returns</span>
-                <span>Buyer help</span>
-            </div>
-            <div class="phone-num">
-                <p>+38 (071) 339-16-26</p>
-                <button>Request a call</button>
-            </div>
-            <div class="mobile-footer-nav">
-                <ul>
-                    <li><a href="./home.html">Home</a></li>
-                    <li><a href="./catalog.html">Catalog</a></li>
-                    <li><a href="./about.html">About Store</a></li>
-                    <li><a href="./contact.html">Contact Us</a></li>
-                    <li><a href="./search.html">Search</a></li>
-                </ul>
-            </div>
+            <div class="mobile-footer-rights-line"></div>
+            <span class="rights">All rights reserved © 2003-2021 Library BookStore EACamp</span>
         </div>
         <div class="mobile-footer-rights-line"></div>
         <span class="rights">All rights reserved © 2003-2021 Library BookStore EACamp</span>
     </div>
     </div>
 </footer>
-<script type="module" src="../js/contact-us.js"></script>
-
+    <script type="module" src="../js/contact-us.js"></script>
+    <script type="module" src="../js/join-us-btn.js"></script>
 </body>
 
 </html>
