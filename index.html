@@ -20,14 +20,20 @@
 </head>
 
 <body>
-    <!-- <div class="join-us-modal">
+    <div id="overlay-back"></div>
+    <div class="join-us-modal">
         <span>Join Us</span>
         <div class="join-us-form">
-            <input type="text" placeholder="Full Name">
-            <input type="email" placeholder="Email">
+            <input id="joinUsFullnameInput" type="text" placeholder="Full Name">
+            <input id="joinUsEmailInput" type="email" placeholder="Email">
         </div>
-        <button id="joinBtn">Join</button>
-    </div> -->
+        <button class="joinBtn" id="joinBtn">Join</button>
+        <div class="joinUsAlertBox">
+            <!-- <div class="alert mt-3 alert-success" role="alert">
+                Your request has been sent successfully!
+            </div> -->
+        </div>
+    </div>
     <header>
         <div class="mobile-logo-container">
             <img src="./src/assets/icon/books-mobile.svg" alt="">
@@ -48,9 +54,9 @@
         </nav>
         <div class="account">
             <img src="./src/assets/icon/profile.svg" alt="">
-            <button id="joinUs">Join us</button>
+            <button id="joinUsBtn">Join us</button>
         </div>
-        <button class="mobile-menu-btn"><img src=".src/assets/icon/hamburgerMenu.svg" alt=""></button>
+        <button class="mobile-menu-btn"><img src="./src/assets/icon/hamburgerMenu.svg" alt=""></button>
     </header>
     <main>
         <section class="section-1">
@@ -141,7 +147,7 @@
     </main>
     <footer>
         <div class="social-media">
-            <img src=".src/assets/image/social-media-group.svg" alt="">
+            <img src="./src/assets/image/social-media-group.svg" alt="">
         </div>
         <div class="footer-container">
             <div class="footer-content">
@@ -192,6 +198,7 @@
             <span class="rights">All rights reserved © 2003-2021 Library BookStore EACamp</span>
         </div>
     </footer>
+    <script type="module" src="./src/js/join-us-btn.js"></script>
 </body>
 
 </html>

@@ -20,6 +20,20 @@
 </head>
 
 <body>
+    <div id="overlay-back"></div>
+    <div class="join-us-modal">
+        <span>Join Us</span>
+        <div class="join-us-form">
+            <input id="joinUsFullnameInput" type="text" placeholder="Full Name">
+            <input id="joinUsEmailInput" type="email" placeholder="Email">
+        </div>
+        <button class="joinBtn" id="joinBtn">Join</button>
+        <div class="joinUsAlertBox">
+            <!-- <div class="alert mt-3 alert-success" role="alert">
+                Your request has been sent successfully!
+            </div> -->
+        </div>
+    </div>
     <header>
         <!-- <div class="mobile-logo-container"> -->
         <!-- <img src="../assets/icon/books-mobile.svg" alt=""> -->
@@ -43,7 +57,7 @@
         </nav>
         <div class="account">
             <img src="../assets/icon/profile.svg" alt="">
-            <button id="joinUs">Join us</button>
+            <button id="joinUsBtn">Join us</button>
         </div>
         <button class="mobile-menu-btn"><img src="../assets/icon/hamburgerMenu.svg" alt=""></button>
     </header>
@@ -135,6 +149,7 @@
         </div>
     </footer>
     <script type="module" src="../js/contact-us.js"></script>
+    <script type="module" src="../js/join-us-btn.js"></script>
     <!--<script type="module">-->
     <!--    /* ======================== HTML elements ========================= */-->
     <!--    let contact_form = document.getElementById("contact_form");-->
