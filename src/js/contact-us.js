@@ -241,10 +241,10 @@ function rmvData(id, col) {
     remove(dataRef);
 }
 
-close_alert.addEventListener('click',function (){
+close_alert?.addEventListener('click',function (){
     modal_alert.classList.remove("show")
 })
-close_data.addEventListener('click',function (){
+close_data?.addEventListener('click',function (){
     modal_data.classList.remove("show")
 })
 
