@@ -23,12 +23,12 @@ async function getBook(bookName){
 async function showSearchBookList(input){
     const data = await getBook(input)
     bookSearchList.innerHTML = data.map((book) =>`
-    <button value=${book.id} class="book-btn"><i class="far fa-clock"></i>${book.volumeInfo.authors?.toString().substr(0,16)}${book.volumeInfo.authors?.toString().length > 10? '...' : ''}&emsp;&ensp;${book.volumeInfo.title.substr(0,19)}${book.volumeInfo.title.length > 10? '...' : ''}</button>`).join('')
+    <button value=${book.id} class="book-btn"><i class="far fa-clock"></i>${book.volumeInfo.authors?.toString().substr(0,16)}${book.volumeInfo.authors?.toString().length > 10? '...' : ''}&emsp;&ensp;${book.volumeInfo.title?.substr(0,19)}${book.volumeInfo.title?.length > 10? '...' : ''}</button>`).join('')
 }
 
 // showSearchBookList('apple')
 
-function debounce(func, timeout = 500){
+function debounce(func, timeout = 300){
     let timer;
     return (...args) => {
       clearTimeout(timer);
