@@ -140,7 +140,7 @@
                 <div class="book-form">
                     <h3>Book form</h3>
                     <div class="add_book_box">
-                        <form action="">
+                        <div class="form">
                             <div class="input_box">
                                 <label for="book_name">
                                     Book Name
@@ -176,7 +176,7 @@
                                 </select>
                             </div>
                             <button>Add</button>
-                        </form>
+                        </div>
                     </div>
 
 
@@ -184,27 +184,27 @@
                 <div class="about-store">
                     <h4 id="about-store">About Store</h4>
                     <div class="add_book_box">
-                        <form action="">
+                        <div class="form">
                             <div class="input_box">
                                 <label for="title">
                                     Title
                                 </label>
-                                <input type="text" id="title">
+                                <input type="text" id="aboutTitle">
                             </div>
                             <div class="input_box">
                                 <label for="image_url">
                                     Book Image Url
                                 </label>
-                                <input type="text" id="image_url">
+                                <input type="text" id="aboutImgURL">
                             </div>
                             <div class="input_box">
                                 <label for="description_book">
                                     Description
                                 </label>
-                                <textarea name="" id="description_book"></textarea>
+                                <textarea name="" id="aboutDescription"></textarea>
                             </div>
-                            <button>About info add</button>
-                        </form>
+                            <button id='aboutInfoAddBtn'>About info add</button>
+                        </div>
                     </div>
                 </div>
                 <!-- JOIN SECTION -->
@@ -342,6 +342,7 @@
     <script type="module" src="../js/contact-us.js"></script>
     <script type="module" src="../js/admin-join-us.js"></script>
     <script src="../js/admin-add-book.js"></script>
+    <script type="module" src="../js/admin-about.js"></script>
 </body>
 
 </html>
