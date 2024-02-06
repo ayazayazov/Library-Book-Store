@@ -159,12 +159,12 @@ contact_form?.addEventListener("submit", function (e) {
 
 
 
-function getDatas(){
+function getDatas() {
     const db_ref = ref(db)
-    get(child(db_ref,'contacts')).then((snapshot)=>{
-        if(snapshot.exists()){
+    get(child(db_ref, 'contacts')).then((snapshot) => {
+        if (snapshot.exists()) {
             let dataArr = Object.entries(snapshot.val())
-            let data_list = dataArr.map((item)=>{
+            let data_list = dataArr.map((item) => {
                 const newObj = {
                     id: item[0],
                     ...item[1],
@@ -197,7 +197,6 @@ function getDatas(){
             for (let i = 0; i < btns.length; i++) {
                 btns[i].addEventListener('click', function () {
                     let id = btns[i].getAttribute('data-id')
-                    console.log(id,'id')
                     handlerRmv(id)
                 })
             }
@@ -211,23 +210,30 @@ function getDatas(){
 
             return data_list
         }
-    }).catch((err)=>{
-        console.log(err,'err')
+    }).catch((err) => {
+        console.log(err, 'err')
     })
 }
-async function showData(data) {
+
+async function showData(id) {
     modal_data.classList.add("show");
-    modal_body_show.innerHTML=`
+    let dataRef = ref(db, 'contacts' + "/" + id);
+    get(dataRef).then(function (snapshot) {
+        let data = snapshot.val();
+        modal_body_show.innerHTML = `
         <ul class="list-group">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A fourth item</li>
-          <li class="list-group-item">And a fifth one</li>
+          <li class="list-group-item">Name: ${data.name}</li>
+          <li class="list-group-item">Address: ${data.address}</li>
+          <li class="list-group-item">Phone: ${data.phone}</li>
+          <li class="list-group-item">Email: ${data.email}</li>
+          <li class="list-group-item">Note: ${data.note}</li>
         </ul>
 `
-    console.log(data, 'datadata')
+    }).catch(function (error) {
+        console.error("Error getting data:", error);
+    });
 }
+
 getDatas()
 
 function rmvData(id, col) {
