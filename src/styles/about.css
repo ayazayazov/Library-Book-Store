@@ -8,7 +8,8 @@ main{
 .about-section{
     margin-top: 80px; /* header qoyulannan sonra düzəlməlidir, */
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 72px;
 }
 .about-paragraph{
@@ -30,11 +31,14 @@ font-size: 18px;
 font-weight: 400;
 line-height: 196.187%; /* 35.314px */
 }
+
 .about-img{
-    padding-top: 66px;
+    padding-top: 50px;
+    width: 50%;
 }
 
 .about-img img{
+    border-radius: 10px;
     width: 100%;
 }
 
