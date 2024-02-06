@@ -305,7 +305,8 @@
                     </table>
                     <!--            <h2 id="home">Home</h2>-->
                 </div>
-
+            </div>
+        </div>
                 <!-- =========================== Modal ===========================-->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -329,6 +330,44 @@
                             </div>
                         </div>
                     </div>
+                </div>
+        <!-- =========================== Delete  Modal ===========================-->
+        <div class="modal modal_alert fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1">Delete</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal_body_custom"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close_alert"
+                                    data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary submit_alert">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- =========================== Show data Modal ===========================-->
+        <div class="modal modal_data fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Data</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal_body_show"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close_data"
+                                    data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

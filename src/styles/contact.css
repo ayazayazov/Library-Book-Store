@@ -1,13 +1,13 @@
 @media only screen and (max-width: 1378px) {
-    .contact-input-note {
-        width: 610px;
-    }
+    /*.contact-input-note {*/
+    /*    width: 610px;*/
+    /*}*/
 }
 
 @media only screen and (min-width: 1378px) {
-    .contact-input-note {
-        width: 1248px;
-    }
+    /*.contact-input-note {*/
+    /*    width: 1248px;*/
+    /*}*/
 }
 
 body {
@@ -37,15 +37,18 @@ main {
 }
 
 .contact-input {
-    width: 610px;
-    height: 74px;
-    color: #797667;
     margin-bottom: 36px;
     font-family: "Crimson Text";
-    font-size: 23px;
-    font-weight: 400;
+    border-radius: 0;
     border: 1px solid #CECECE;
-    padding: 26px 0 24px 38px;
+    background: #FFF;
+    padding: 20px 28px;
+    color: #241400;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
 }
 
 .contact-input-note {
@@ -56,6 +59,7 @@ main {
     font-weight: 400;
     border: 1px solid #CECECE;
     padding: 13px 0 0 38px;
+    width: 100%;
 
 }
 
