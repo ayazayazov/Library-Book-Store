@@ -166,8 +166,12 @@
                                 <input type="number" id="book_publication_year">
                             </div>
                             <div class="form_check">
-                                <input type="checkbox" value="new" id="isNew">
+                                <input type="checkbox"  id="isNew">
                                 <label for="isNew">New</label>
+                            </div>
+                            <div class="form_check">
+                                <input type="checkbox"  id="isBestSeller">
+                                <label for="isBestSeller">Best seller</label>
                             </div>
                             <div class="input_box">
                                 <label for="description">
@@ -178,14 +182,13 @@
                             <div class="input_box">
                                 <label for="book_type">
                                     Book Type
-                                    <button type="button" class="btn-sm btn" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal"><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn-sm btn btn_book_type" ><i class="fas fa-plus"></i></button>
                                 </label>
                                 <select name="" id="book_type">
-                                    <option value="">Something else</option>
                                 </select>
                             </div>
-                            <button>Add</button>
+                            <div class="alert_box"></div>
+                            <button type="button" id="add_book">Add</button>
                         </div>
                     </div>
 
@@ -196,19 +199,19 @@
                     <div class="add_book_box">
                         <div class="form">
                             <div class="input_box">
-                                <label for="title">
+                                <label for="aboutTitle">
                                     Title
                                 </label>
                                 <input type="text" id="aboutTitle">
                             </div>
                             <div class="input_box">
-                                <label for="image_url">
+                                <label for="aboutImgURL">
                                     Image Url
                                 </label>
                                 <input type="text" id="aboutImgURL">
                             </div>
                             <div class="input_box">
-                                <label for="description_book">
+                                <label for="aboutDescription">
                                     Description
                                 </label>
                                 <textarea name="" id="aboutDescription"></textarea>
@@ -248,48 +251,10 @@
                                 <th>Description</th>
                                 <th>Category</th>
                                 <th>Author</th>
-                                <th> <img src="../assets/icon/trash.svg" width="20px" height="20px" alt=""></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody class="table-body">
-                            <tr>
-                                <th>1</th>
-                                <td class="book-icon">
-                                    <img src="../assets/icon/angelbook.svg" alt="">
-                                    <p>Angel</p>
-                                </td>
-                                <td>Lorem ipsum test...</td>
-                                <td>Dedectiv</td>
-                                <td>Dan Brown</td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                        <tbody class="table-body" id="book_data">
 
                         </tbody>
                     </table>
@@ -318,7 +283,7 @@
             </div>
         </div>
         <!-- =========================== Modal ===========================-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal modal_category fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -327,12 +292,13 @@
                     </div>
                     <div class="modal-body">
                         <div class="">
-                            <label for="type_name">Type name</label>
+                            <label for="type_name" class="mb-3">Type name</label>
                             <input type="text" class="form-control" id="type_name">
                         </div>
+                        <div class="alert_box"></div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-primary book_category_submit">Save</button>
                         </div>
                     </div>
                 </div>
@@ -351,7 +317,7 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary close_alert"
                                 data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary submit_alert">Save</button>
+                            <button type="button" class="btn btn-danger submit_alert">Delete</button>
                         </div>
                     </div>
                 </div>
@@ -375,6 +341,81 @@
                 </div>
             </div>
         </div>
+        <!-- =========================== Update Book Modal ===========================-->
+        <div class="modal update_modal_box  fade " tabindex="-1" aria-labelledby="exampleModalLabel5"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel5">Data</h5>
+                    </div>
+                    <form action="">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="book_name" class="form-label">Book Name</label>
+                                        <input type="text" class="form-control" id="book_name_update"  name="book_name">
+                                        <input type="hidden" class="form-control" id="book_id" name="book_id" >
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="author_name" class="form-label">Author</label>
+                                        <input type="text" class="form-control" id="author_name_update" name="author_name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label for="book_image_url" class="form-label">Image url</label>
+                                        <input type="text" class="form-control" id="book_image_url_update" name="book_image_url">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label for="book_description_update" class="form-label">Description</label>
+                                        <textarea type="text" class="form-control" id="book_description_update" name="book_description_update" ></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="book_publication_year" class="form-label">Publication year</label>
+                                        <input type="text" class="form-control" id="book_publication_year_update" name="book_publication_year" >
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="book_type" class="form-label">Category</label>
+                                        <select name="book_type_update" id="book_type_update" class="form-control">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3 form-check d-flex align-items-end gap-2">
+                                        <input type="checkbox" class="form-check-input" id="isNew_update" name="isNew_update">
+                                        <label class="form-check-label" for="isNew_update">New</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3 form-check d-flex align-items-end gap-2">
+                                        <input type="checkbox" class="form-check-input" id="isBestSeller_update" name="isBestSeller_update">
+                                        <label class="form-check-label" for="isBestSeller_update">Best Seller</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary close_update"
+                                        data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary " id="update_book_btn"
+                                >Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -389,6 +430,7 @@
     <script type="module" src="../js/admin-join-us.js"></script>
     <script src="../js/admin-add-book.js"></script>
     <script type="module" src="../js/admin-about.js"></script>
+    <script type="module" src="../js/submit_book.js"></script>
 </body>
 
 </html>

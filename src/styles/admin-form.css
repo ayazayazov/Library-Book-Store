@@ -139,11 +139,21 @@
 .form  button i{
     color: #fff;
 }
+table td{
+    text-align: left;
+}
+table img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
 .modal_alert.show,
+.update_modal_box.show,
 .modal_data.show{
     display: block;
 }
 .modal_alert,
+.update_modal_box,
 .modal_data{
     background-color: rgba(0,0,0,0.4);
 }
@@ -154,4 +164,10 @@
     gap: 10px;
     font-family: 'Roboto';
     font-size: 16px;
+}
+.modal_category{
+    background-color: rgba(0,0,0,0.4);
+}
+.modal_category.show{
+    display: block;
 }
