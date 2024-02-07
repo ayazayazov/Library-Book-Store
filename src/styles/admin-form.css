@@ -22,6 +22,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    border-radius: 20px;
 }
 .form .input_box{
     display: flex;
@@ -145,4 +146,12 @@
 .modal_alert,
 .modal_data{
     background-color: rgba(0,0,0,0.4);
+}
+
+.form_check{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Roboto';
+    font-size: 16px;
 }

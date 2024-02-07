@@ -160,6 +160,16 @@
                                 <input type="text" id="book_image_url">
                             </div>
                             <div class="input_box">
+                                <label for="book_image_url">
+                                    Publication Year
+                                </label>
+                                <input type="number" id="book_publication_year">
+                            </div>
+                            <div class="form_check">
+                                <input type="checkbox" value="new" id="isNew">
+                                <label for="isNew">New</label>
+                            </div>
+                            <div class="input_box">
                                 <label for="description">
                                     Description
                                 </label>
@@ -193,7 +203,7 @@
                             </div>
                             <div class="input_box">
                                 <label for="image_url">
-                                    Book Image Url
+                                    Image Url
                                 </label>
                                 <input type="text" id="aboutImgURL">
                             </div>
@@ -307,33 +317,30 @@
                 </div>
             </div>
         </div>
-                <!-- =========================== Modal ===========================-->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add Book Type</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="">
-                                    <label for="type_name">Type name</label>
-                                    <input type="text" class="form-control" id="type_name">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save</button>
-                                </div>
-                            </div>
+        <!-- =========================== Modal ===========================-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Book Type</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="">
+                            <label for="type_name">Type name</label>
+                            <input type="text" class="form-control" id="type_name">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save</button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
         <!-- =========================== Delete  Modal ===========================-->
         <div class="modal modal_alert fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
-             aria-hidden="true">
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -343,7 +350,7 @@
                         <div class="modal_body_custom"></div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary close_alert"
-                                    data-bs-dismiss="modal">Close</button>
+                                data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary submit_alert">Save</button>
                         </div>
                     </div>
@@ -352,7 +359,7 @@
         </div>
         <!-- =========================== Show data Modal ===========================-->
         <div class="modal modal_data fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
-             aria-hidden="true">
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -362,7 +369,7 @@
                         <div class="modal_body_show"></div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary close_data"
-                                    data-bs-dismiss="modal">Close</button>
+                                data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>

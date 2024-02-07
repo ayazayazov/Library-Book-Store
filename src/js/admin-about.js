@@ -45,3 +45,13 @@ aboutInfoAddBtn.addEventListener('click', ()=>{
     }
     setAboutStoreData(form)
 })
+
+function renderAboutStore(snapshot){
+    const data = snapshot.val()
+    console.log(data);
+    aboutTitle.value = data.title
+    aboutImgURL.value = data.bookImageUrl
+    aboutDescription.value = data.description
+}
+
+onValue(ref(db, 'about-store'), renderAboutStore)
