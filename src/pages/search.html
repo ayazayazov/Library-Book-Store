@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
         integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/search.css">
     <link rel="stylesheet" href="../styles/header-footer.css">
@@ -61,82 +62,92 @@
     </header>
 
     <main>
-        <div class="main-section">
-            <!-- <div class="search-line">
-                <h1 class="search-title">Search</h1>
-                <input class="input-search" type="text" placeholder="Order in Chaos">
-                <button class="btn-search">Search</button>
-            </div>
-            <div class="arrows">
-                <button class="arrow-btn prev"><img src="../assets/icon/arrow-left.svg" alt=""></button>
-                <div class="slider">
-                    <img src="../assets/icon/searchbook.svg" alt="">
-                    <div>
-                        <h3>Order in Chaos</h3>
-                        <p>Konstantin Koptelov</p>
-                        <p class="book-text">We work without holidays and weekends! Residents of Kiev can receive an
-                            order
-                            on the day of its registration. Customers from other cities of Ukraine can receive
-                            an order within 1-5 days, depending on the location of the settlement and the selected
-                            delivery method. Orders over UAH 1000 are delivered free of charge *. You can see the
-                            available
-                            methods, exact terms and cost of delivery during checkout in the order basket, after
-                            selecting the delivery city </p>
-                    </div>
+        <section class="search_section">
+            <div class="container">
+                <div class="search_title">
+                    <h1>Search</h1>
                 </div>
-
-                <button class="arrow-btn"><img src="../assets/icon/arrow-right.svg" alt=""></button>
-
-            </div> -->
-            <div class="search-line">
-                <h1 class="search-title">Search</h1>
-                <input class="input-search" type="text" placeholder="Order in Chaos">
-                <button class="btn-search">Search</button>
-            </div>
-            <div class="arrows">
-                <button class="arrow-btn " onclick="previousSlide()"><img src="../assets/icon/arrow-left.svg"
-                        alt=""></button>
-                <div id="slider" class="slider">
-                    <div class="texts">
-                        <img src="../assets/icon/searchbook.svg" alt="">
-                        <div>
-                            <h3>Order in Chaos</h3>
-                            <p>Konstantin Koptelov</p>
-                            <p class="book-text">We work without holidays and weekends! Residents of Kiev can receive an
-                                order
-                                on the day of its registration. Customers from other cities of Ukraine can receive
-                                an order within 1-5 days, depending on the location of the settlement and the selected
-                                delivery method. Orders over UAH 1000 are delivered free of charge *. You can see the
-                                available
-                                methods, exact terms and cost of delivery during checkout in the order basket, after
-                                selecting the delivery city </p>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="search_form">
+                            <input type="text" class="web_input" placeholder="Search book">
+                            <button class="form_btn">Search</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="search_box">
+                            <div class="swiper swiper_search">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide">
+                                        <div class="search_item">
+                                            <div class="search_item_left">
+                                                <img src="../assets/image/books.png" alt="">
+                                            </div>
+                                            <div class="search_item_text">
+                                                <h4 class="book_name">
+                                                    Order in Chaos
+                                                </h4>
+                                                <h6 class="author_name">
+                                                    Konstantin Koptelov
+                                                </h6>
+                                                <p class="book_desc">
+                                                    We work without holidays and weekends! Residents of Kiev can receive an
+                                                    order on the day of its registration. Customers from other cities of
+                                                    Ukraine can receive an order within 1-5 days, depending on the location
+                                                    of the settlement and the selected delivery method. Orders over UAH 1000
+                                                    are delivered free of charge *. You can see the available methods, exact
+                                                    terms and cost of delivery during checkout in the order basket, after
+                                                    selecting the delivery city
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="search_item">
+                                            <div class="search_item_left">
+                                                <img src="../assets/image/books.png" alt="">
+                                            </div>
+                                            <div class="search_item_text">
+                                                <h4 class="book_name">
+                                                    Order in Chaos
+                                                </h4>
+                                                <h6 class="author_name">
+                                                    Konstantin Koptelov
+                                                </h6>
+                                                <p class="book_desc">
+                                                    We work without holidays and weekends! Residents of Kiev can receive an
+                                                    order on the day of its registration. Customers from other cities of
+                                                    Ukraine can receive an order within 1-5 days, depending on the location
+                                                    of the settlement and the selected delivery method. Orders over UAH 1000
+                                                    are delivered free of charge *. You can see the available methods, exact
+                                                    terms and cost of delivery during checkout in the order basket, after
+                                                    selecting the delivery city
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="43" viewBox="0 0 23 43"
+                                         fill="none">
+                                        <path d="M22 1L1 21.5L22 42" stroke="#720418"/>
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="43" viewBox="0 0 23 43"
+                                         fill="none">
+                                        <path d="M1 1L22 21.5L1 42" stroke="#720418"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="slider" class="slider">
-                    <div class="texts">
-                        <img src="../assets/icon/searchbook.svg" alt="">
-                        <div>
-                            <h3>War and Piece</h3>
-                            <p>Lev Tolstoy</p>
-                            <p class="book-text">We work without holidays and weekends! Residents of Kiev can receive an
-                                order
-                                on the day of its registration. Customers from other cities of Ukraine can receive
-                                an order within 1-5 days, depending on the location of the settlement and the selected
-                                delivery method. Orders over UAH 1000 are delivered free of charge *. You can see the
-                                available
-                                methods, exact terms and cost of delivery during checkout in the order basket, after
-                                selecting the delivery city </p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="arrow-btn" onclick="nextSlide()"><img src="../assets/icon/arrow-right.svg"
-                        alt=""></button>
-
             </div>
-        </div>
-
+        </section>
     </main>
 
     <footer>
@@ -192,6 +203,8 @@
             <span class="rights">All rights reserved © 2003-2021 Library BookStore EACamp</span>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../js/swiper.js"></script>
     <script src="../js/search.js"></script>
     <script type="module" src="../js/join-us-btn.js"></script>
 </body>
