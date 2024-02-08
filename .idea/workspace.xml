@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bf90fd3-a512-4d31-8aee-c6de978a553b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/catalog-web.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/catalog-web.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/catalog-web.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/submit_book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/submit_book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/swiper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/catalog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/catalog.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/catalog.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

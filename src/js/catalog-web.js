@@ -49,9 +49,10 @@ function convertData(d) {
     });
     return myNewData;
 }
-/* ======================== Show Categories Collection ========================= */
-onValue(ref(db, "categories"), renderCategory);
 
+/* ======================== Show Categories Collection ========================= */
+
+onValue(ref(db, "categories"), renderCategory);
 function renderCategory(snaphot) {
     const data = convertData(snaphot.val());
     let data_list = data.map((item, index) => {
@@ -64,14 +65,14 @@ function renderCategory(snaphot) {
     for (let i = 0; i < btns.length; i++) {
         btns[i].addEventListener('click', function () {
             let id = btns[i].getAttribute('data-id')
-            handleCategory(id)
+            getBooksDatas(id)
         })
     }
     return data
 }
+
 onValue(ref(db, "books"), renderNewBooks);
 onValue(ref(db, "books"), renderBestSellerBooks);
-
 function renderNewBooks(snaphot) {
     const data = convertData(snaphot.val());
     let filtered_books = data.filter((book)=>{
@@ -116,9 +117,12 @@ function renderBestSellerBooks(snaphot) {
     swiper_bestSeller.innerHTML = data_list;
     return data
 }
-function getBooksDatas(category_list) {
+
+
+function getBooksDatas(category_id) {
     const db_ref = ref(db)
     get(child(db_ref, 'books')).then((snapshot) => {
+        let book_data
         if (snapshot.exists()) {
             let dataArr = Object.entries(snapshot.val())
             let data_list = dataArr.map((item) => {
@@ -130,7 +134,15 @@ function getBooksDatas(category_list) {
                 // console.log(item,'item')
 
             })
-            let data_list_mapping = data_list.map((item, index) => {
+            let filtered_data = data_list.filter((book)=>{
+                return book.book_category === category_id
+            })
+            if(category_id){
+                book_data = filtered_data
+            }else{
+                book_data = data_list
+            }
+            let data_list_mapping = book_data.map((item, index) => {
                 return `
                 <div class="swiper-slide">
                     <div class="catalog_box_item">
@@ -151,7 +163,3 @@ function getBooksDatas(category_list) {
 }
 
 getBooksDatas()
-
-function handleCategory(id){
-    console.log(id,'id')
-}

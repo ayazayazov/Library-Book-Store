@@ -350,7 +350,3 @@ update_book_btn.addEventListener("click",function (e){
     uptData(id,'books',form_update)
     update_modal_box.classList.remove("show")
 })
-
-function getBookName(){
-    console.log('change')
-}
