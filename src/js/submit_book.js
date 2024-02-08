@@ -313,6 +313,13 @@ async function showData(id,category_list) {
         book_publication_year_update.value= data.publication_year
         book_description_update.value= data.description_book
         book_type_update.innerHTML = categories;
+        if(data.isNewCheck.value===true){
+            console.log(isNew_update,'isNew_update')
+            isNew_update.checked = true
+        }
+        if(data.publication_year.value){
+            book_publication_year_update.checked = true
+        }
     }).catch(function (error) {
         console.error("Error getting data:", error);
     });

@@ -4,8 +4,103 @@ let swiper_bestSeller = document.getElementById("swiper_bestSeller")
 let swiper_new = document.getElementById("swiper_new")
 
 
+const swiper_all_x = new Swiper('.swiper.swiper_all', {
+    // Optional parameters
+    slidesPerView:5,
+    direction: 'horizontal',
+    loop: true,
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1.5,
+            spaceBetween: 20
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+        // when window width is >= 640px
+        767: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        1200: {
+            slidesPerView: 5,
+            spaceBetween: 20
+        }
+    }
+});
 
-
+const swiper_bestseller = new Swiper('.swiper.swiper_bestseller', {
+    // Optional parameters
+    slidesPerView:5,
+    direction: 'horizontal',
+    loop: true,
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1.5,
+            spaceBetween: 20
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+        // when window width is >= 640px
+        767: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        1200: {
+            slidesPerView: 5,
+            spaceBetween: 20
+        }
+    }
+});
+const swiper_New = new Swiper('.swiper.swiper_New', {
+    // Optional parameters
+    slidesPerView:5,
+    direction: 'horizontal',
+    loop: true,
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1.5,
+            spaceBetween: 20
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+        // when window width is >= 640px
+        767: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        1200: {
+            slidesPerView: 5,
+            spaceBetween: 20
+        }
+    }
+});
 
 
 
@@ -93,6 +188,7 @@ function renderNewBooks(snaphot) {
         `
     }).join("")
     swiper_new.innerHTML = data_list;
+    swiper_New.update()
     return data
 }
 function renderBestSellerBooks(snaphot) {
@@ -115,6 +211,7 @@ function renderBestSellerBooks(snaphot) {
         `
     }).join("")
     swiper_bestSeller.innerHTML = data_list;
+    swiper_bestseller.update()
     return data
 }
 
@@ -131,8 +228,6 @@ function getBooksDatas(category_id) {
                     ...item[1],
                 };
                 return newObj
-                // console.log(item,'item')
-
             })
             let filtered_data = data_list.filter((book)=>{
                 return book.book_category === category_id
@@ -155,6 +250,7 @@ function getBooksDatas(category_id) {
         `
             }).join("")
             swiper_all.innerHTML = data_list_mapping;
+            swiper_all_x.update()
             return data_list
         }
     }).catch((err) => {
