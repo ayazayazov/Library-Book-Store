@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bf90fd3-a512-4d31-8aee-c6de978a553b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/submit_book.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/admin-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/admin-form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/admin-panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/admin-panel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/catalog-web.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/catalog-web.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/submit_book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/submit_book.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +42,16 @@
     <configuration name="admin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Library-Book-Store/src/pages/admin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="catalog.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Library-Book-Store/src/pages/catalog.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="contact.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Library-Book-Store/src/pages/contact.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.admin.html" />
+        <item itemvalue="JavaScript Debug.catalog.html" />
         <item itemvalue="JavaScript Debug.contact.html" />
       </list>
     </recent_temporary>

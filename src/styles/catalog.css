@@ -14,11 +14,13 @@ body{
 }
 .catalog_categories ul{
     display: flex;
-    /*justify-content: center;*/
+    justify-content: center;
     align-items: center;
     gap: 40px;
 }
-.catalog_categories ul li a{
+.catalog_categories ul li button{
+    background-color: transparent;
+    border: none;
     color: #241400;
     font-size: 13px;
     font-style: normal;
@@ -88,7 +90,13 @@ body{
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 196.187%; /* 23.542px */
+    line-height: 196.187%;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 25px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 .catalog_box_item a{
     border-radius: 3px;
