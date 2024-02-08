@@ -133,7 +133,7 @@ add_book.addEventListener("click", function (e) {
     let isBestSellerCheck = isBestSeller.checked;
     let description_book = description.value;
     let book_category = book_type.value;
-
+    let date_book_added = Date()
     let form = {
         book,
         author,
@@ -143,6 +143,7 @@ add_book.addEventListener("click", function (e) {
         isBestSellerCheck,
         description_book,
         book_category,
+        date_book_added
     }
     if (!book) {
         book_name.classList.add("is-invalid")

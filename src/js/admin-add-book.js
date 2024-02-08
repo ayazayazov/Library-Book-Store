@@ -5,6 +5,7 @@ const bookName = document.querySelector('#book_name')
 const authorName = document.querySelector('#author_name')
 const bookImgURL = document.querySelector('#book_image_url')
 const description = document.querySelector('#description')
+const bookPublicationYear = document.querySelector('#book_publication_year')
 
 async function getBook(bookName){
     try {
@@ -54,7 +55,7 @@ async function getBookByID(BookID){
         // const authors = data.items[0].volumeInfo.authors?.toString()
         // const title = data.items[0].volumeInfo.title
         // console.log(authors, title);
-        // console.log(data.items);
+        console.log(data);
         return data
     } catch (err) {
         console.log('err', err);
@@ -67,6 +68,7 @@ bookSearchList.addEventListener('click', async(e)=>{
     bookName.value = bookForm.volumeInfo.title
     authorName.value = bookForm.volumeInfo.authors.toString()
     bookImgURL.value = bookForm.volumeInfo.imageLinks.thumbnail
+    bookPublicationYear.value = bookForm.volumeInfo.publishedDate
     description.value = bookForm.volumeInfo.description
     searchResult.style.display = 'none'
     bookSearchInput.value = ''

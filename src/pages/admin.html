@@ -163,14 +163,14 @@
                                 <label for="book_image_url">
                                     Publication Year
                                 </label>
-                                <input type="number" id="book_publication_year">
+                                <input type="text" id="book_publication_year">
                             </div>
                             <div class="form_check">
-                                <input type="checkbox"  id="isNew">
+                                <input type="checkbox" id="isNew">
                                 <label for="isNew">New</label>
                             </div>
                             <div class="form_check">
-                                <input type="checkbox"  id="isBestSeller">
+                                <input type="checkbox" id="isBestSeller">
                                 <label for="isBestSeller">Best seller</label>
                             </div>
                             <div class="input_box">
@@ -182,7 +182,8 @@
                             <div class="input_box">
                                 <label for="book_type">
                                     Book Type
-                                    <button type="button" class="btn-sm btn btn_book_type" ><i class="fas fa-plus"></i></button>
+                                    <button type="button" class="btn-sm btn btn_book_type"><i
+                                            class="fas fa-plus"></i></button>
                                 </label>
                                 <select name="" id="book_type">
                                 </select>
@@ -283,7 +284,8 @@
             </div>
         </div>
         <!-- =========================== Modal ===========================-->
-        <div class="modal modal_category fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal modal_category fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -343,76 +345,80 @@
         </div>
         <!-- =========================== Update Book Modal ===========================-->
         <div class="modal update_modal_box  fade " tabindex="-1" aria-labelledby="exampleModalLabel5"
-             aria-hidden="true">
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel5">Data</h5>
                     </div>
-                    <form action="">
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <label for="book_name" class="form-label">Book Name</label>
-                                        <input type="text" class="form-control" id="book_name_update"  name="book_name">
-                                        <input type="hidden" class="form-control" id="book_id" name="book_id" >
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <label for="author_name" class="form-label">Author</label>
-                                        <input type="text" class="form-control" id="author_name_update" name="author_name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="mb-3">
-                                        <label for="book_image_url" class="form-label">Image url</label>
-                                        <input type="text" class="form-control" id="book_image_url_update" name="book_image_url">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="mb-3">
-                                        <label for="book_description_update" class="form-label">Description</label>
-                                        <textarea type="text" class="form-control" id="book_description_update" name="book_description_update" ></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <label for="book_publication_year" class="form-label">Publication year</label>
-                                        <input type="text" class="form-control" id="book_publication_year_update" name="book_publication_year" >
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <label for="book_type" class="form-label">Category</label>
-                                        <select name="book_type_update" id="book_type_update" class="form-control">
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3 form-check d-flex align-items-end gap-2">
-                                        <input type="checkbox" class="form-check-input" id="isNew_update" name="isNew_update">
-                                        <label class="form-check-label" for="isNew_update">New</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="mb-3 form-check d-flex align-items-end gap-2">
-                                        <input type="checkbox" class="form-check-input" id="isBestSeller_update" name="isBestSeller_update">
-                                        <label class="form-check-label" for="isBestSeller_update">Best Seller</label>
-                                    </div>
+                    <!-- <form action=""> -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="book_name" class="form-label">Book Name</label>
+                                    <input type="text" class="form-control" id="book_name_update" name="book_name">
+                                    <input type="hidden" class="form-control" id="book_id" name="book_id">
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary close_update"
-                                        data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary " id="update_book_btn"
-                                >Save</button>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="author_name" class="form-label">Author</label>
+                                    <input type="text" class="form-control" id="author_name_update" name="author_name">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <label for="book_image_url" class="form-label">Image url</label>
+                                    <input type="text" class="form-control" id="book_image_url_update"
+                                        name="book_image_url">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <label for="book_description_update" class="form-label">Description</label>
+                                    <textarea type="text" class="form-control" id="book_description_update"
+                                        name="book_description_update"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="book_publication_year" class="form-label">Publication year</label>
+                                    <input type="text" class="form-control" id="book_publication_year_update"
+                                        name="book_publication_year">
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="book_type" class="form-label">Category</label>
+                                    <select name="book_type_update" id="book_type_update" class="form-control">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3 form-check d-flex align-items-end gap-2">
+                                    <input type="checkbox" class="form-check-input" id="isNew_update"
+                                        name="isNew_update">
+                                    <label class="form-check-label" for="isNew_update">New</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3 form-check d-flex align-items-end gap-2">
+                                    <input type="checkbox" class="form-check-input" id="isBestSeller_update"
+                                        name="isBestSeller_update">
+                                    <label class="form-check-label" for="isBestSeller_update">Best Seller</label>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close_update"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary " id="update_book_btn">Save</button>
+                        </div>
+                    </div>
+                    <!-- </form> -->
                 </div>
             </div>
         </div>
