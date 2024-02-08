@@ -3,6 +3,7 @@ let book_category_submit = document.querySelector(".book_category_submit")
 
 let book_type = document.querySelector("#book_type")
 let modal_category = document.querySelector(".modal_category")
+let close_category = document.querySelector(".close_category")
 let alert_box = document.querySelector(".alert_box")
 let btn_book_type = document.querySelector(".btn_book_type")
 let book_name = document.querySelector("#book_name")
@@ -123,6 +124,11 @@ btn_book_type.addEventListener("click", function (e) {
     e.preventDefault();
     modal_category.classList.add("show")
 })
+close_category.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal_category.classList.remove("show")
+})
+
 add_book.addEventListener("click", function (e) {
     e.preventDefault();
     let book = book_name.value;
@@ -236,8 +242,8 @@ function getBooksDatas(category_list) {
                 <td>${item.author}</td>
                 <td>
                 <div class="d-flex align-items-center gap-1 justify-content-start">
-                    <button type="button" class="text-danger btn removeDoc" data-id="${item.id}"><i class="fas fa-trash"></i> </button> 
-                    <button  class="text-success btn showDoc" data-id="${item.id}"><i class="fas fa-edit"></i> </button>
+                    <button type="button" class="text-danger btn removeBook" data-id="${item.id}"><i class="fas fa-trash"></i> </button> 
+                    <button  class="text-success btn editDoc" data-id="${item.id}"><i class="fas fa-edit"></i> </button>
                 </div>
                 </td>
             </tr>
@@ -245,14 +251,14 @@ function getBooksDatas(category_list) {
             }).join("")
             book_data.innerHTML = data_list_mapping;
 
-            let btns = document.getElementsByClassName('removeDoc');
+            let btns = document.getElementsByClassName('removeBook');
             for (let i = 0; i < btns.length; i++) {
                 btns[i].addEventListener('click', function () {
                     let id = btns[i].getAttribute('data-id')
                     handlerRmv(id)
                 })
             }
-            let showDocs = document.getElementsByClassName('showDoc');
+            let showDocs = document.getElementsByClassName('editDoc');
             for (let i = 0; i < showDocs.length; i++) {
                 showDocs[i].addEventListener('click', function () {
                     let item = showDocs[i].getAttribute('data-id')
