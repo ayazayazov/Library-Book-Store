@@ -313,12 +313,15 @@ async function showData(id,category_list) {
         book_publication_year_update.value= data.publication_year
         book_description_update.value= data.description_book
         book_type_update.innerHTML = categories;
-        if(data.isNewCheck.value===true){
-            console.log(isNew_update,'isNew_update')
-            isNew_update.checked = true
+        if(data.isNewCheck === true){
+            isNew_update.setAttribute('checked','checked')
+        }else{
+            isNew_update.removeAttribute('checked')
         }
-        if(data.publication_year.value){
-            book_publication_year_update.checked = true
+        if(data.isBestSellerCheck === true) {
+            isBestSeller_update.setAttribute('checked', 'checked')
+        }else{
+            isBestSeller_update.removeAttribute('checked')
         }
     }).catch(function (error) {
         console.error("Error getting data:", error);
