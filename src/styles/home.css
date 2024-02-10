@@ -1,19 +1,21 @@
-body{
-    background-color:#FFFAF5 ;
+body {
+    background-color: #FFFAF5;
 }
-main{
+
+main {
     margin: 86px 86px 0 86px;
 }
 
-.section-1{
+.section-1 {
     display: flex;
     justify-content: space-between;
     gap: 140px;
     align-items: center;
     margin-bottom: 66px;
-    
+
 }
-.textbtn{
+
+.textbtn {
     display: flex;
     gap: 16px;
     flex-direction: column;
@@ -21,56 +23,56 @@ main{
     margin-left: 40px;
 }
 
-.sec1-title{
-    color:#241400;
-font-family: Montserrat;
-font-size: 36px;
-font-weight: 900;
-line-height: 196.187%; /* 70.627px */
-}
-
-.sec1-text{
+.sec1-title {
     color: #241400;
-font-family: Montserrat;
-font-size: 13px;
-font-weight: 400;
-line-height: 196.187%; /* 25.504px */
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 196.187%; /* 70.627px */
 }
 
-.sec1-btn{
+.sec1-text {
+    color: #241400;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 196.187%; /* 25.504px */
+}
+
+.sec1-btn {
     background: #E16A00;
     color: #FFF;
-font-family: Montserrat;
-font-size: 15px;
-font-style: normal;
-font-weight: 900;
-line-height: 196.187%; 
-width: 212px;
-height: 50px;
-border: none;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 196.187%;
+    width: 212px;
+    height: 50px;
+    border: none;
 }
 
 /* SECTION 2 */
-.section-2{
-  
+.section-2 {
+
     margin-bottom: 90px;
 }
 
-.card{
+.card {
     text-align: center;
-    padding-top: 24px;
     border-radius: 10px;
-background: #FFF;
-box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
-width: 242px;
-height: 76px;
-color:  #241400;
-font-family: Montserrat;
-font-size: 14px;
-font-weight: 700;
-line-height: 196.187%; /* 27.466px */
+    background: #FFF;
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+    width: 242px;
+    height: 76px;
+    color: #241400;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 196.187%; /* 27.466px */
 }
-.cards{
+
+.cards {
     display: flex;
     flex-wrap: wrap;
     gap: 36px;
@@ -80,81 +82,86 @@ line-height: 196.187%; /* 27.466px */
     width: 70%;
 }
 
-.sec2-title{
+.sec2-title {
     color: #000;
-font-family: Montserrat;
-font-size: 25px;
-font-weight: 900;
-line-height: 196.187%; /* 49.047px */
-text-align: center;
-margin-bottom: 48px;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.187%; /* 49.047px */
+    text-align: center;
+    margin-bottom: 48px;
 }
+
 /* SECTION-3 */
-.section-3{
+.section-3 {
     margin-bottom: 90px;
 }
 
-.sec3-title{
+.sec3-title {
     color: #241400;
-font-family: Montserrat;
-font-size: 25px;
-font-weight: 900;
-line-height: 196.187%; /* 49.047px */
-text-align: center;
-margin-bottom: 64px;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.187%; /* 49.047px */
+    text-align: center;
+    margin-bottom: 64px;
 }
 
-.sec3-num{
+.sec3-num {
     color: #241400;
-font-family: Montserrat;
-font-size: 50px;
-font-style: normal;
-font-weight: 900;
-line-height: 196.187%; /* 98.094px */
+    font-family: Montserrat;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 196.187%; /* 98.094px */
 }
 
-.sec3-text{
-    color:  #241400;
+.sec3-text {
+    color: #241400;
 
-font-family: Montserrat;
-font-size: 13px;
-font-style: normal;
-font-weight: 400;
-line-height: 196.187%; /* 25.504px */
+    font-family: Montserrat;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 196.187%; /* 25.504px */
 }
 
-.sec3-statistic{
+.sec3-statistic {
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 28px;
 }
-.statistic{
+
+.statistic {
     display: flex;
     gap: 30px;
     justify-content: center;
 
 }
+
 /* SECTION-4 */
 
-.sec4-title{
-    color:  #241400;
-font-family: Montserrat;
-font-size: 25px;
-font-weight: 900;
-line-height: 196.187%; /* 49.047px */
-text-align: center;
-}
-.sec4-text{
+.sec4-title {
     color: #241400;
-text-align: center;
-font-family: Montserrat;
-font-size: 12px;
-font-weight: 400;
-line-height: 196.187%;
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 196.187%; /* 49.047px */
+    text-align: center;
+}
+
+.sec4-text {
+    color: #241400;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 196.187%;
 
 }
-.sec4-content{
+
+.sec4-content {
     display: flex;
     flex-direction: column;
     gap: 42px;
@@ -164,16 +171,17 @@ line-height: 196.187%;
 /* RESPONSIVE DESIGN */
 
 
-@media only screen and (max-width: 1200px){
-    .section-1{
+@media only screen and (max-width: 1200px) {
+    .section-1 {
         display: flex;
         flex-direction: column;
     }
-    .textbtn{
+
+    .textbtn {
         width: 100%;
     }
-    
-    .cards{
+
+    .cards {
         display: flex;
         flex-wrap: wrap;
         gap: 36px;
@@ -182,13 +190,58 @@ line-height: 196.187%;
         left: 74px;
         width: 70%;
     }
-    .statistic{
+
+    .statistic {
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
         justify-content: left;
     }
-    .sec3-title{
+
+    .sec3-title {
         margin-bottom: 30px;
     }
+}
+
+.section_padding {
+    padding: 30px 0;
+}
+
+.section_title h2 {
+    color: #000;
+    text-align: center;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 196.187%; /* 49.047px */
+}
+
+.catalog_list {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.catalog_list .catalog_box {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 11px 0px rgba(0, 0, 0, 0.25);
+    max-width: 242px;
+    border: none;
+    width: 100%;
+    padding: 24px;
+    color: #241400;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 196.187%; /* 27.466px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px auto;
+    transition: 0.5s all;
+}
+
+.catalog_list .catalog_box:hover {
+    background-color: #de802d;
+    color: #fff;
 }

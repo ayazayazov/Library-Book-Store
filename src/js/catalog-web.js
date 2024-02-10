@@ -223,10 +223,11 @@ function renderBestSellerBooks(snaphot) {
     return data
 }
 
-const local_data_list = JSON.parse(localStorage.getItem("book_list")) ?? [];
+// const local_data_list = JSON.parse(localStorage.getItem("book_list")) ?? [];
 
 function getBooksDatas(category_id) {
     const db_ref = ref(db)
+    
     get(child(db_ref, 'books')).then((snapshot) => {
         let book_data
         if (snapshot.exists()) {
@@ -238,6 +239,7 @@ function getBooksDatas(category_id) {
                 };
                 return newObj
             })
+
             let filtered_data = data_list.filter((book) => {
                 return book.book_category === category_id
             })
@@ -246,15 +248,15 @@ function getBooksDatas(category_id) {
             } else {
                 book_data = data_list
             }
-            let data_list_with_local = local_data_list.splice(0,local_data_list.length,book_data)
-            localStorage.setItem("book_list", JSON.stringify(data_list_with_local.flat()));
+            // let data_list_with_local = local_data_list.splice(0,local_data_list.length,book_data)
+            // localStorage.setItem("book_list", JSON.stringify(data_list_with_local.flat()));
 
-            if(data_list_with_local.length===0){
-                data_list_with_local = book_data
-            }else{
-                data_list_with_local = data_list_with_local.flat()
-            }
-            let data_list_map = data_list_with_local.map((item, index) => {
+            // if(data_list_with_local.length===0){
+            //     data_list_with_local = book_data
+            // }else{
+            //     data_list_with_local = data_list_with_local.flat()
+            // }
+            let data_list_map = book_data.map((item, index) => {
                 return `
                 <div class="swiper-slide">
                     <div class="catalog_box_item">
@@ -363,3 +365,8 @@ document.getElementById("search_btn").addEventListener("click", function () {
     let path_name = `/Library-Book-Store/src/pages/search.html`
     window.location = path_name
 })
+
+function getCategoryIdFromHome(){
+    let id = sessionStorage.getItem("category_id");
+    return id
+}
