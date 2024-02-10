@@ -221,11 +221,9 @@ function getBooksDatas(category_list) {
                     ...item[1],
                 };
                 return newObj
-                // console.log(item,'item')
-
             })
             let data_list_mapping = data_list.map((item, index) => {
-                let single_category = category_list.filter((category)=>{
+                let single_category = category_list?.filter((category)=>{
                     if(category.id === item.book_category){
                         return category
                     }
@@ -313,6 +311,7 @@ async function showData(id,category_list) {
         book_publication_year_update.value= data.publication_year
         book_description_update.value= data.description_book
         book_type_update.innerHTML = categories;
+        book_type_update.value = data.book_category
         if(data.isNewCheck === true){
             isNew_update.setAttribute('checked','checked')
         }else{
@@ -360,3 +359,4 @@ update_book_btn.addEventListener("click",function (e){
     uptData(id,'books',form_update)
     update_modal_box.classList.remove("show")
 })
+

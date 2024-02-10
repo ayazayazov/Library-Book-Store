@@ -269,12 +269,25 @@ nav ul{
     font-family: "Montserrat", sans-serif;
 }
 
+nav ul button,
 nav ul a{
     color: #241400;
     font-size: 12px;
     font-weight: 400;
 }
-
+nav ul button:hover,
+nav ul a:hover{
+  color: #E16A00;
+}
+nav ul button{
+  padding: 0;
+  background-color: transparent;
+}
+nav ul button.active{
+  font-weight: 700;
+  text-decoration: underline;
+  color: #E16A00;
+}
 .account {
     /* display: flex; */
     justify-content: flex-end;
