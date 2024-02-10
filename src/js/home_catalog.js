@@ -66,5 +66,5 @@ function renderCategory(snaphot) {
 window.addEventListener('click',function (e){
    let id_data =  e.target.value
     window.location.pathname ='/Library-Book-Store/src/pages/catalog.html'
-    sessionStorage.setItem("category_id",id_data)
+    localStorage.setItem("category_id",id_data)
 })

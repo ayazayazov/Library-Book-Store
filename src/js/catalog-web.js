@@ -223,13 +223,17 @@ function renderBestSellerBooks(snaphot) {
     return data
 }
 
-// const local_data_list = JSON.parse(localStorage.getItem("book_list")) ?? [];
+const local_data_list = JSON.parse(localStorage.getItem("book_list")) ?? [];
 
 function getBooksDatas(category_id) {
     const db_ref = ref(db)
-    
+
     get(child(db_ref, 'books')).then((snapshot) => {
         let book_data
+        let category_from_home = localStorage.getItem("category_id")
+        if(category_from_home && !category_id){
+            category_id = category_from_home
+        }
         if (snapshot.exists()) {
             let dataArr = Object.entries(snapshot.val())
             let data_list = dataArr.map((item) => {
@@ -248,14 +252,18 @@ function getBooksDatas(category_id) {
             } else {
                 book_data = data_list
             }
-            // let data_list_with_local = local_data_list.splice(0,local_data_list.length,book_data)
-            // localStorage.setItem("book_list", JSON.stringify(data_list_with_local.flat()));
+            // console.log(local_data_list,'local_data_list')
+            let data_list_with_local ;
+            // localStorage.removeItem("book_list")
 
             // if(data_list_with_local.length===0){
             //     data_list_with_local = book_data
             // }else{
             //     data_list_with_local = data_list_with_local.flat()
+            //     console.log(book_data,'1')
+            //     console.log(data_list_with_local,'2')
             // }
+            // localStorage.setItem("book_list", JSON.stringify(book_data.flat()));
             let data_list_map = book_data.map((item, index) => {
                 return `
                 <div class="swiper-slide">
