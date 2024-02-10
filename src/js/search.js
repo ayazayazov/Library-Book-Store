@@ -42,10 +42,22 @@ function convertData(d) {
     return myNewData;
 }
 
+// defaultSlide1.remove()
+    // defaultSlide2.innerHTML = ''
+// defaultSlide2.remove()
+
 onValue(ref(db, 'books'), rederBooks)
 function rederBooks(snapshot) {
+    defaultSlide1.remove()
+    defaultSlide2.innerHTML = ''
+    defaultSlide2.remove()
     books = convertData(snapshot.val())
-    swiperWrapper.innerHTML = books.map((item) =>{
+    let searchedBooks = books.filter((item) =>{
+        if(item.book.includes('')){
+            return item
+        }
+    })
+    swiperWrapper.innerHTML = searchedBooks.map((item) =>{
         return `
         <div class="swiper-slide">
                                         <div class="search_item">
@@ -61,9 +73,7 @@ function rederBooks(snapshot) {
                                     </div>
         `
     }).join('')
-    // defaultSlide1.remove()
-    defaultSlide2.innerHTML = ''
-    defaultSlide2.remove()
+    
 }
 
 searchBtn.addEventListener('click', ()=>{
