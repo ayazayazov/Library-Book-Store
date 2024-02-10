@@ -246,15 +246,15 @@ function getBooksDatas(category_id) {
             } else {
                 book_data = data_list
             }
-            let data_list_with_local = local_data_list.splice(0,local_data_list.length,book_data)
-            localStorage.setItem("book_list", JSON.stringify(data_list_with_local.flat()));
+            // let data_list_with_local = local_data_list.splice(0,local_data_list.length,book_data)
+            // localStorage.setItem("book_list", JSON.stringify(data_list_with_local.flat()));
 
-            if(data_list_with_local.length===0){
-                data_list_with_local = book_data
-            }else{
-                data_list_with_local = data_list_with_local.flat()
-            }
-            let data_list_map = data_list_with_local.map((item, index) => {
+            // if(data_list_with_local.length===0){
+            //     data_list_with_local = book_data
+            // }else{
+            //     data_list_with_local = data_list_with_local.flat()
+            // }
+            let data_list_map = book_data.map((item, index) => {
                 return `
                 <div class="swiper-slide">
                     <div class="catalog_box_item">
@@ -324,7 +324,7 @@ window.addEventListener('click', function (e) {
                 <div class="comment_box">
                     <div class="comment_top">
                         <h4>${comment.title}</h4>
-                        <span>${comment.date.slice(0, 10)} ${comment.date.slice(11 ,16)}</span>
+                        <span>${comment.date.slice(5, 16)} ${comment.date.slice(17 ,22)}</span>
                     </div>
                     <div class="comment_text">
                         <p>${comment.body}</p>
@@ -455,3 +455,5 @@ commentSendBtn.addEventListener('click', async()=>{
         }
     }).join('')
 })
+
+// book comment
