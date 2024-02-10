@@ -3,6 +3,12 @@ let swiper_all = document.getElementById("swiper_all")
 let swiper_bestSeller = document.getElementById("swiper_bestSeller")
 let swiper_new = document.getElementById("swiper_new")
 
+let catalog_container = document.querySelector(".catalog_container")
+let book_detail_container = document.querySelector(".book_detail_container")
+const book_data = document.querySelector(".book_data")
+const back_btn = document.querySelector(".back_btn")
+
+
 
 const swiper_all_x = new Swiper('.swiper.swiper_all', {
     // Optional parameters
@@ -36,7 +42,6 @@ const swiper_all_x = new Swiper('.swiper.swiper_all', {
         }
     }
 });
-
 const swiper_bestseller = new Swiper('.swiper.swiper_bestseller', {
     // Optional parameters
     slidesPerView:5,
@@ -152,17 +157,20 @@ function renderCategory(snaphot) {
     const data = convertData(snaphot.val());
     let data_list = data.map((item, index) => {
         return `
-           <li><button type="button" class="catewgory_name" data-id="${item.id}">${item.category_name}</button></li>
+           <li><button type="button" class="category_name" data-id="${item.id}">${item.category_name}</button></li>
         `
     }).join("")
     category_list.innerHTML = data_list;
-    let btns = document.getElementsByClassName('catewgory_name');
+    let btns = document.getElementsByClassName('category_name');
     for (let i = 0; i < btns.length; i++) {
         btns[i].addEventListener('click', function () {
+            // btns[i].classList.add("active")
             let id = btns[i].getAttribute('data-id')
             getBooksDatas(id)
         })
+
     }
+
     return data
 }
 
@@ -182,7 +190,7 @@ function renderNewBooks(snaphot) {
                     <img src="${item.image_url}" alt="">
                    <span>New</span>
                     <h5>${item.book}</h5>
-                    <a href="#">Read more</a>
+                    <button class="read_more" value="${item.id}" >Read more</button>
                 </div>
             </div>
         `
@@ -205,7 +213,7 @@ function renderBestSellerBooks(snaphot) {
                     <img src="${item.image_url}" alt="">
                    <span>${item.isNewCheck === true?'New' : ''}</span>
                     <h5>${item.book}</h5>
-                    <a href="#">Read more</a>
+                    <button class="read_more" value="${item.id}" >Read more</button>
                 </div>
             </div>
         `
@@ -214,7 +222,6 @@ function renderBestSellerBooks(snaphot) {
     swiper_bestseller.update()
     return data
 }
-
 
 function getBooksDatas(category_id) {
     const db_ref = ref(db)
@@ -244,7 +251,7 @@ function getBooksDatas(category_id) {
                         <img src="${item.image_url}" alt="">
                        <span> ${item.isNewCheck ? 'New': ''}</span>
                         <h5>${item.book}</h5>
-                        <a href="#">Read more</a>
+                        <button class="read_more" value="${item.id}" >Read more</button>
                     </div>
                 </div>
         `
@@ -259,3 +266,91 @@ function getBooksDatas(category_id) {
 }
 
 getBooksDatas()
+
+
+window.addEventListener('click',function (e){
+    e.preventDefault()
+    let id = e.target.value;
+    if(id){
+        catalog_container.style.display="none"
+        book_detail_container.style.display="block"
+        back_btn.style.display="block"
+
+    }
+    if(!id){
+        return
+    }
+    let dataRef = ref(db, 'books' + "/" + id);
+    get(dataRef).then(function (snapshot) {
+        let data = snapshot.val();
+        window.scrollTo(0, 0);
+        book_data.innerHTML = `
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="book_text_box">
+                    <div class="book_detail">
+                        <span class="publish_year">${data.publication_year}</span>
+                        <h2 class="book_name">${data.book}</h2>
+                        <h5 class="added_time">${convertTime(new Date(data.date_book_added))}</h5>
+                        <h6 class="book_author">${data.author}</h6>
+                        <p class="book_desc">${data.description} </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="img_box">
+                    <img src="${data.image_url}" alt="">
+                    <span class="new_book">${data.isNewCheck? 'New':""}</span>
+                </div>
+            </div>
+        </div>
+        `
+    }).catch(function (error) {
+        console.error("Error getting data:", error);
+    });
+})
+
+function convertTime(time){
+    let new_date = new Date()
+    let show_date
+    let difference = new_date.getTime() - time.getTime()
+    let get_day = Math.floor(difference / 1000 / 60 / 60 / 24)
+    let get_hours = Math.floor((difference / 1000 / 60 / 60 ) - get_day * 24)
+    // let get_minutes= Math.floor((difference / 1000 / 60 ) - (get_hours * 60) - get_day *24 )
+    if(get_day >= 1){
+        show_date = `${get_day} day, ${get_hours} hours ago`
+    }
+    else if(get_day <  1 && get_hours >= 1){
+        show_date = `${get_hours} hours ago`
+    }else{
+        show_date = `A few minutes ago`
+    }
+    return show_date
+}
+
+
+back_btn.addEventListener("click",function (){
+    book_detail_container.style.display = 'none'
+    catalog_container.style.display = 'block'
+    back_btn.style.display = 'none'
+})
+document.getElementById("home_btn").addEventListener("click",function (){
+    let path_name = `/Library-Book-Store/index.html`
+   window.location = path_name
+})
+document.getElementById("catalog_btn").addEventListener("click",function (){
+    let path_name = `/Library-Book-Store/src/pages/catalog.html`
+    window.location = path_name
+})
+document.getElementById("about_btn").addEventListener("click",function (){
+    let path_name = `/Library-Book-Store/src/pages/about.html`
+    window.location = path_name
+})
+document.getElementById("contact_btn").addEventListener("click",function (){
+    let path_name = `/Library-Book-Store/src/pages/contact.html`
+    window.location = path_name
+})
+document.getElementById("search_btn").addEventListener("click",function (){
+    let path_name = `/Library-Book-Store/src/pages/search.html`
+    window.location = path_name
+})
