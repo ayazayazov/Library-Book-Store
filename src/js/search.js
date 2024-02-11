@@ -1,3 +1,16 @@
+const swiper_search = new Swiper('.swiper.swiper_search', {
+    // Optional parameters
+    slidesPerView:1,
+    direction: 'horizontal',
+    spaceBetween: 20,
+    loop: true,
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {
     getDatabase,
@@ -42,15 +55,8 @@ function convertData(d) {
     return myNewData;
 }
 
-// defaultSlide1.remove()
-    // defaultSlide2.innerHTML = ''
-// defaultSlide2.remove()
-
 onValue(ref(db, 'books'), rederBooks)
 function rederBooks(snapshot) {
-    defaultSlide1.remove()
-    defaultSlide2.innerHTML = ''
-    defaultSlide2.remove()
     books = convertData(snapshot.val())
     let searchedBooks = books.filter((item) =>{
         if(item.book.includes('')){
@@ -73,6 +79,7 @@ function rederBooks(snapshot) {
                                     </div>
         `
     }).join('')
+    swiper_search.update()
     
 }
 
@@ -99,4 +106,5 @@ searchBtn.addEventListener('click', ()=>{
                                     </div>
         `
     }).join('')
+    swiper_search.update()
 })

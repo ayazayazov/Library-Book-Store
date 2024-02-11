@@ -407,12 +407,12 @@ async function getPosts(){
 }
 
 async function createPost(){
-    const dateNow = new Date().toUTCString()
+    const dateNow = new Date()
     let form = {
         title: 'anonim',
         body: commentInput.value,
         commentID: commentId,
-        date: dateNow.toLocaleString()
+        date: dateNow
     }
     try {
         const response = await fetch(`https://blog-api-t6u0.onrender.com/posts`, {
