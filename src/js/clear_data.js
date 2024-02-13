@@ -1,6 +1,6 @@
-
-function clearId() {
-    localStorage.removeItem("category_id")
-}
-
-clearId()
+//
+// function clearId() {
+//     localStorage.removeItem("category_id")
+// }
+//
+// clearId()
