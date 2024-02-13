@@ -154,15 +154,13 @@ onValue(ref(db, "categories"), renderCategory);
 onValue(ref(db, "books"), renderNewBooks);
 onValue(ref(db, "books"), renderBestSellerBooks);
 
-function renderNewBooks(snaphot) {
-    const data = convertData(snaphot.val());
-    let filtered_books = data.filter((book) => {
-        if (book.isNewCheck === true) {
-            return book
-        }
-    })
-    let data_list = filtered_books.map((item, index) => {
-        return `
+function renderNewBooks() {
+    let mainQuery = query(ref(db, 'books'), orderByChild('isNewCheck'),equalTo(true))
+    get(mainQuery).then((snapshot)=>{
+        if (snapshot.exists()) {
+            const data = convertData(snapshot.val());
+            let data_list = data.map((item, index) => {
+                return `
             <div class="swiper-slide">
                 <div class="catalog_box_item">
                     <img src="${item.image_url}" alt="">
@@ -172,34 +170,36 @@ function renderNewBooks(snaphot) {
                 </div>
             </div>
         `
-    }).join("")
-    swiper_new.innerHTML = data_list;
-    swiper_New.update()
-    return data
-}
-
-function renderBestSellerBooks(snaphot) {
-    const data = convertData(snaphot.val());
-    let filtered_books = data.filter((book) => {
-        if (book.isBestSellerCheck === true) {
-            return book
+            }).join("")
+            swiper_new.innerHTML = data_list;
+            swiper_New.update()
+            return data
         }
     })
-    let data_list = filtered_books.map((item, index) => {
-        return `
+}
+
+function renderBestSellerBooks() {
+    let mainQuery = query(ref(db, 'books'), orderByChild('isBestSellerCheck'),equalTo(true))
+    get(mainQuery).then((snapshot)=>{
+        if (snapshot.exists()) {
+            const data = convertData(snapshot.val());
+            let data_list = data.map((item, index) => {
+                return `
             <div class="swiper-slide">
                 <div class="catalog_box_item">
                     <img src="${item.image_url}" alt="">
-                   <span>${item.isNewCheck === true ? 'New' : ''}</span>
+                    <span> ${item.isNewCheck ? 'New' : ''}</span>
                     <h5>${item.book}</h5>
                     <button class="read_more" value="${item.id}" >Read more</button>
                 </div>
             </div>
         `
-    }).join("")
-    swiper_bestSeller.innerHTML = data_list;
-    swiper_bestseller.update()
-    return data
+            }).join("")
+            swiper_bestSeller.innerHTML = data_list;
+            swiper_bestseller.update()
+            return data
+        }
+    })
 }
 
 // const local_data_list = JSON.parse(localStorage.getItem("book_list")) ?? [];
