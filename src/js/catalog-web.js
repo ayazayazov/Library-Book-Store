@@ -164,7 +164,7 @@ function renderNewBooks() {
             <div class="swiper-slide">
                 <div class="catalog_box_item">
                     <img src="${item.image_url}" alt="">
-                   <span>New</span>
+                    <span class="show">New</span>
                     <h5>${item.book}</h5>
                     <button class="read_more" value="${item.id}" >Read more</button>
                 </div>
@@ -188,7 +188,7 @@ function renderBestSellerBooks() {
             <div class="swiper-slide">
                 <div class="catalog_box_item">
                     <img src="${item.image_url}" alt="">
-                    <span> ${item.isNewCheck ? 'New' : ''}</span>
+                    <span class="${item.isNewCheck? 'show': ''}">New</span>
                     <h5>${item.book}</h5>
                     <button class="read_more" value="${item.id}" >Read more</button>
                 </div>
@@ -214,7 +214,7 @@ function renderCategory(snaphot) {
     let btns = document.getElementsByClassName('category_name');
     for (let i = 0; i < btns.length; i++) {
         btns[i].addEventListener('click', function () {
-            // btns[i].classList.add("active")
+            // btns[i].parentElement.classList.add("active")
             let id = btns[i].getAttribute('data-id')
             localStorage.setItem("category_id",id)
             getBooksDatas(id)
@@ -250,7 +250,7 @@ function getBooksDatas(category_id) {
                 <div class="swiper-slide">
                     <div class="catalog_box_item">
                         <img src="${item.image_url}" alt="">
-                       <span> ${item.isNewCheck ? 'New' : ''}</span>
+                        <span class="${item.isNewCheck? 'show': ''}">New</span>
                         <h5>${item.book}</h5>
                         <button class="read_more" value="${item.id}" >Read more</button>
                     </div>
@@ -304,7 +304,7 @@ window.addEventListener('click', function (e) {
             <div class="col-lg-5">
                 <div class="img_box">
                     <img src="${data.image_url}" alt="">
-                    <span class="new_book">${data.isNewCheck ? 'New' : ""}</span>
+                    <span class="new_book ${data.isNewCheck ? 'show': ''}">New</span>
                 </div>
             </div>
         </div>

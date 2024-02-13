@@ -28,6 +28,9 @@ body{
     line-height: 196.187%; /* 25.504px */
     white-space: nowrap;
 }
+.catalog_categories ul li.active button{
+    color: #de802d;
+}
 .catalog_categories::-webkit-scrollbar {
     display: none;
 }
@@ -90,6 +93,10 @@ body{
     top: 0;
     right: 0;
     padding: 1px 15px;
+    display: none;
+}
+.catalog_box_item span.show{
+    display: block;
 }
 .catalog_box_item h5{
     color: #241400;
