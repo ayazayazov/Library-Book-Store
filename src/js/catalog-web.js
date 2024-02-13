@@ -112,13 +112,12 @@ import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-
 import {
     getDatabase,
     ref,
-    push,
     child,
-    set,
     get,
+    equalTo,
+    query,
+    orderByChild,
     onValue,
-    update,
-    remove
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -151,26 +150,6 @@ function convertData(d) {
 
 onValue(ref(db, "categories"), renderCategory);
 
-function renderCategory(snaphot) {
-    const data = convertData(snaphot.val());
-    let data_list = data.map((item, index) => {
-        return `
-           <li><button type="button" class="category_name" data-id="${item.id}">${item.category_name}</button></li>
-        `
-    }).join("")
-    category_list.innerHTML = data_list;
-    let btns = document.getElementsByClassName('category_name');
-    for (let i = 0; i < btns.length; i++) {
-        btns[i].addEventListener('click', function () {
-            // btns[i].classList.add("active")
-            let id = btns[i].getAttribute('data-id')
-            getBooksDatas(id)
-        })
-
-    }
-
-    return data
-}
 
 onValue(ref(db, "books"), renderNewBooks);
 onValue(ref(db, "books"), renderBestSellerBooks);
@@ -223,17 +202,40 @@ function renderBestSellerBooks(snaphot) {
     return data
 }
 
-const local_data_list = JSON.parse(localStorage.getItem("book_list")) ?? [];
+// const local_data_list = JSON.parse(localStorage.getItem("book_list")) ?? [];
+function renderCategory(snaphot) {
+    const data = convertData(snaphot.val());
+    let data_list = data.map((item, index) => {
+        return `
+           <li><button type="button" class="category_name" data-id="${item.id}">${item.category_name}</button></li>
+        `
+    }).join("")
+    category_list.innerHTML = data_list;
+    let btns = document.getElementsByClassName('category_name');
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function () {
+            // btns[i].classList.add("active")
+            let id = btns[i].getAttribute('data-id')
+            localStorage.setItem("category_id",id)
+            getBooksDatas(id)
+        })
+
+    }
+
+    return data
+}
 
 function getBooksDatas(category_id) {
-    const db_ref = ref(db)
+    let local_category_id = localStorage.getItem("category_id")
 
-    get(child(db_ref, 'books')).then((snapshot) => {
-        let book_data
-        let category_from_home = localStorage.getItem("category_id")
-        if(category_from_home && !category_id){
-            category_id = category_from_home
-        }
+    if(local_category_id){
+        category_id = local_category_id
+    }
+    let mainQuery = query(ref(db, 'books'))
+    if(category_id){
+        mainQuery = query(ref(db, 'books'), orderByChild('book_category'),equalTo(category_id))
+    }
+    get(mainQuery).then((snapshot) => {
         if (snapshot.exists()) {
             let dataArr = Object.entries(snapshot.val())
             let data_list = dataArr.map((item) => {
@@ -243,28 +245,7 @@ function getBooksDatas(category_id) {
                 };
                 return newObj
             })
-
-            let filtered_data = data_list.filter((book) => {
-                return book.book_category === category_id
-            })
-            if (category_id) {
-                book_data = filtered_data
-            } else {
-                book_data = data_list
-            }
-            // console.log(local_data_list,'local_data_list')
-            let data_list_with_local ;
-            // localStorage.removeItem("book_list")
-
-            // if(data_list_with_local.length===0){
-            //     data_list_with_local = book_data
-            // }else{
-            //     data_list_with_local = data_list_with_local.flat()
-            //     console.log(book_data,'1')
-            //     console.log(data_list_with_local,'2')
-            // }
-            // localStorage.setItem("book_list", JSON.stringify(book_data.flat()));
-            let data_list_map = book_data.map((item, index) => {
+            let data_list_map = data_list.map((item, index) => {
                 return `
                 <div class="swiper-slide">
                     <div class="catalog_box_item">
@@ -279,6 +260,9 @@ function getBooksDatas(category_id) {
             swiper_all.innerHTML = data_list_map;
             swiper_all_x.update()
             return data_list
+        }else{
+            swiper_all.innerHTML = `<h1 class="no_data">There is no book in this category!</h1>`
+            swiper_all_x.update()
         }
     }).catch((err) => {
         console.log(err, 'err')
@@ -336,7 +320,6 @@ function convertTime(time) {
     let difference = new_date.getTime() - time.getTime()
     let get_day = Math.floor(difference / 1000 / 60 / 60 / 24)
     let get_hours = Math.floor((difference / 1000 / 60 / 60) - get_day * 24)
-    // let get_minutes= Math.floor((difference / 1000 / 60 ) - (get_hours * 60) - get_day *24 )
     if (get_day >= 1) {
         show_date = `${get_day} day, ${get_hours} hours ago`
     } else if (get_day < 1 && get_hours >= 1) {
@@ -374,7 +357,7 @@ document.getElementById("search_btn").addEventListener("click", function () {
     window.location = path_name
 })
 
-function getCategoryIdFromHome(){
-    let id = sessionStorage.getItem("category_id");
-    return id
-}
+all_books.addEventListener("click",function (){
+    localStorage.removeItem("category_id")
+    getBooksDatas()
+})
