@@ -202,24 +202,32 @@ function renderBestSellerBooks() {
     })
 }
 
-// const local_data_list = JSON.parse(localStorage.getItem("book_list")) ?? [];
 function renderCategory(snaphot) {
     const data = convertData(snaphot.val());
     let data_list = data.map((item, index) => {
         return `
-           <li><button type="button" class="category_name" data-id="${item.id}">${item.category_name}</button></li>
+           <li data-id="${item.id}"><button type="button" class="category_name" data-id="${item.id}">${item.category_name}</button></li>
         `
     }).join("")
     category_list.innerHTML = data_list;
-    let btns = document.getElementsByClassName('category_name');
+    let btns = document.querySelectorAll('.category_name');
     for (let i = 0; i < btns.length; i++) {
+        btns[i].parentElement.classList.remove("active")
         btns[i].addEventListener('click', function () {
-            // btns[i].parentElement.classList.add("active")
+            btns.forEach(btn=>{
+                btn.parentElement.classList.remove("active")
+            })
+            btns[i].parentElement.classList.add("active")
             let id = btns[i].getAttribute('data-id')
             localStorage.setItem("category_id",id)
             getBooksDatas(id)
-        })
 
+        })
+        let id = btns[i].getAttribute('data-id')
+        let local_id= localStorage.getItem("category_id")
+        if(id === local_id){
+            btns[i].parentElement.classList.add("active")
+        }
     }
 
     return data
