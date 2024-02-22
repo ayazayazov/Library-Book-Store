@@ -155,8 +155,8 @@ onValue(ref(db, "books"), renderNewBooks);
 onValue(ref(db, "books"), renderBestSellerBooks);
 
 function renderNewBooks() {
-    let mainQuery = query(ref(db, 'books'), orderByChild('isNewCheck'),equalTo(true))
-    get(mainQuery).then((snapshot)=>{
+    let mainQuery = query(ref(db, 'books'), orderByChild('isNewCheck'), equalTo(true))
+    get(mainQuery).then((snapshot) => {
         if (snapshot.exists()) {
             const data = convertData(snapshot.val());
             let data_list = data.map((item, index) => {
@@ -179,8 +179,8 @@ function renderNewBooks() {
 }
 
 function renderBestSellerBooks() {
-    let mainQuery = query(ref(db, 'books'), orderByChild('isBestSellerCheck'),equalTo(true))
-    get(mainQuery).then((snapshot)=>{
+    let mainQuery = query(ref(db, 'books'), orderByChild('isBestSellerCheck'), equalTo(true))
+    get(mainQuery).then((snapshot) => {
         if (snapshot.exists()) {
             const data = convertData(snapshot.val());
             let data_list = data.map((item, index) => {
@@ -188,7 +188,7 @@ function renderBestSellerBooks() {
             <div class="swiper-slide">
                 <div class="catalog_box_item">
                     <img src="${item.image_url}" alt="">
-                    <span class="${item.isNewCheck? 'show': ''}">New</span>
+                    <span class="${item.isNewCheck ? 'show' : ''}">${item.isNewCheck ? 'New': ""}</span>
                     <h5>${item.book}</h5>
                     <button class="read_more" value="${item.id}" >Read more</button>
                 </div>
@@ -214,18 +214,18 @@ function renderCategory(snaphot) {
     for (let i = 0; i < btns.length; i++) {
         btns[i].parentElement.classList.remove("active")
         btns[i].addEventListener('click', function () {
-            btns.forEach(btn=>{
+            btns.forEach(btn => {
                 btn.parentElement.classList.remove("active")
             })
             btns[i].parentElement.classList.add("active")
             let id = btns[i].getAttribute('data-id')
-            localStorage.setItem("category_id",id)
+            localStorage.setItem("category_id", id)
             getBooksDatas(id)
 
         })
         let id = btns[i].getAttribute('data-id')
-        let local_id= localStorage.getItem("category_id")
-        if(id === local_id){
+        let local_id = localStorage.getItem("category_id")
+        if (id === local_id) {
             btns[i].parentElement.classList.add("active")
         }
     }
@@ -236,12 +236,12 @@ function renderCategory(snaphot) {
 function getBooksDatas(category_id) {
     let local_category_id = localStorage.getItem("category_id")
 
-    if(local_category_id){
+    if (local_category_id) {
         category_id = local_category_id
     }
     let mainQuery = query(ref(db, 'books'))
-    if(category_id){
-        mainQuery = query(ref(db, 'books'), orderByChild('book_category'),equalTo(category_id))
+    if (category_id) {
+        mainQuery = query(ref(db, 'books'), orderByChild('book_category'), equalTo(category_id))
     }
     get(mainQuery).then((snapshot) => {
         if (snapshot.exists()) {
@@ -258,7 +258,7 @@ function getBooksDatas(category_id) {
                 <div class="swiper-slide">
                     <div class="catalog_box_item">
                         <img src="${item.image_url}" alt="">
-                        <span class="${item.isNewCheck? 'show': ''}">New</span>
+                        <span class="${item.isNewCheck ? 'show' : ''}">${item.isNewCheck ? 'New': ""}</span>
                         <h5>${item.book}</h5>
                         <button class="read_more" value="${item.id}" >Read more</button>
                     </div>
@@ -268,7 +268,7 @@ function getBooksDatas(category_id) {
             swiper_all.innerHTML = data_list_map;
             swiper_all_x.update()
             return data_list
-        }else{
+        } else {
             swiper_all.innerHTML = `<h1 class="no_data">There is no book in this category!</h1>`
             swiper_all_x.update()
         }
@@ -305,14 +305,14 @@ window.addEventListener('click', function (e) {
                         <h2 class="book_name">${data.book}</h2>
                         <h5 class="added_time">${convertTime(new Date(data.date_book_added))}</h5>
                         <h6 class="book_author">${data.author}</h6>
-                        <p class="book_desc">${data.description} </p>
+                        <p class="book_desc">${data.description_book} </p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="img_box">
                     <img src="${data.image_url}" alt="">
-                    <span class="new_book ${data.isNewCheck ? 'show': ''}">New</span>
+                    <span class="new_book ${data.isNewCheck ? 'show' : ''}">${data.isNewCheck ? 'New': ""}</span>
                 </div>
             </div>
         </div>
@@ -365,7 +365,11 @@ document.getElementById("search_btn").addEventListener("click", function () {
     window.location = path_name
 })
 
-all_books.addEventListener("click",function (){
+all_books.addEventListener("click", function () {
     localStorage.removeItem("category_id")
+    let  btn_list= category_list.children
+    for(let i=0;i<btn_list.length;i++){
+        btn_list[i].classList.remove("active")
+    }
     getBooksDatas()
 })

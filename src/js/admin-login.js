@@ -1,3 +1,6 @@
+import CustomToast from "./custom_toast.js";
+
+
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 const firebaseConfig = {
@@ -32,6 +35,10 @@ adminLoginBtn.addEventListener('click', async()=>{
         <div class="alert mt-3 alert-danger" role="alert">
         Enter a username and password
         </div>`
+        CustomToast().fire({
+            icon: 'error',
+            title: 'Enter a username and password!'
+        })
         setTimeout(() => {
             joinUsAlertBox.innerHTML = ''
             userName.style.border = '1px solid rgb(206, 206, 206)'
@@ -43,6 +50,10 @@ adminLoginBtn.addEventListener('click', async()=>{
     await signInWithEmailAndPassword(auth, userEmail, userPass)
     .then((userCredential) => {
         console.log(userCredential);
+        CustomToast().fire({
+            icon: 'success',
+            title: 'You logged in successfully!'
+        })
         adminLogin.style.display = 'none'
         adminPanel.style.display = 'flex'
     })
@@ -54,6 +65,10 @@ adminLoginBtn.addEventListener('click', async()=>{
         <div class="alert mt-3 alert-danger" role="alert">
         Enter a correct username and password
         </div>`
+        CustomToast().fire({
+            icon: 'error',
+            title: 'Enter a correct username and password!'
+        })
         setTimeout(() => {
             joinUsAlertBox.innerHTML = ''
             userName.style.border = '1px solid rgb(206, 206, 206)'

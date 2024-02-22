@@ -53,13 +53,6 @@ function renderCategory(snaphot) {
         `
     }).join("")
     catalog_list.innerHTML = data_list;
-    let btns = document.getElementsByClassName('category_name');
-    for (let i = 0; i < btns.length; i++) {
-        btns[i].addEventListener('click', function () {
-            let id = btns[i].getAttribute('data-id')
-        })
-
-    }
 
     return data
 }
@@ -69,4 +62,5 @@ window.addEventListener('click',function (e){
         window.location.pathname ='/Library-Book-Store/src/pages/catalog.html'
         localStorage.setItem("category_id",id_data)
     }
+    if(!id_data){return}
 })

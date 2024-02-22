@@ -1,7 +1,10 @@
+
+
 const aboutTitle = document.querySelector("#aboutTitle")
 const aboutImgURL = document.querySelector("#aboutImgURL")
 const aboutDescription = document.querySelector("#aboutDescription")
 const aboutInfoAddBtn = document.querySelector('#aboutInfoAddBtn')
+import CustomToast from "./custom_toast.js";
 
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {getDatabase,ref,push,child,set,get,onValue,update,remove} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
@@ -20,7 +23,10 @@ const db = getDatabase()
 function setAboutStoreData(data){
     try {
         set(ref(db, 'about-store'), data)
-        alert('Your request has been sent successfully!')
+        CustomToast().fire({
+            icon: 'success',
+            title: 'Shared successfully.'
+        })
     } catch (err) {
         console.log(err);
     }

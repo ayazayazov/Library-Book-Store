@@ -45,6 +45,5 @@ function convertData(d) {
 onValue(ref(db, "categories"), renderCategory);
 function renderCategory(snaphot) {
     const data = convertData(snaphot.val());
-    console.log(data,'data')
     return data
 }
