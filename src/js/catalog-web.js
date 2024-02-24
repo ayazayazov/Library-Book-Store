@@ -294,7 +294,7 @@ window.addEventListener('click', function (e) {
     }
     commentId = e.target.value;
     let dataRef = ref(db, 'books' + "/" + id);
-    get(dataRef).then(function (snapshot) {
+    get(dataRef).then(async function (snapshot) {
         let data = snapshot.val();
         window.scrollTo(0, 0);
         book_data.innerHTML = `
@@ -319,7 +319,7 @@ window.addEventListener('click', function (e) {
         </div>
         `
         let comments = await getPosts()
-    commentList.innerHTML = comments.map((comment) => {
+        commentList.innerHTML = comments.map((comment) => {
         if(comment.commentID === commentId){
             return `
             <li>
@@ -409,7 +409,7 @@ async function getPosts(){
             }
         })
         const data = await response.json()
-        console.log(data);
+        // console.log(data);
         return data;
     } catch (err) {
         console.log('err',err);
