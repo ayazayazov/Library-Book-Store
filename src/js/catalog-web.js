@@ -254,6 +254,23 @@ function getBooksDatas(category_id) {
                 return newObj
             })
             let data_list_map = data_list.map((item, index) => {
+            let filtered_data = data_list.filter((book) => {
+                return book.book_category === category_id
+            })
+            if (category_id) {
+                book_data = filtered_data
+            } else {
+                book_data = data_list
+            }
+            // let data_list_with_local = local_data_list.splice(0,local_data_list.length,book_data)
+            // localStorage.setItem("book_list", JSON.stringify(data_list_with_local.flat()));
+
+            // if(data_list_with_local.length===0){
+            //     data_list_with_local = book_data
+            // }else{
+            //     data_list_with_local = data_list_with_local.flat()
+            // }
+            let data_list_map = book_data.map((item, index) => {
                 return `
                 <div class="swiper-slide">
                     <div class="catalog_box_item">
@@ -292,8 +309,9 @@ window.addEventListener('click', function (e) {
     if (!id) {
         return
     }
+    commentId = e.target.value;
     let dataRef = ref(db, 'books' + "/" + id);
-    get(dataRef).then(function (snapshot) {
+    get(dataRef).then(async function (snapshot) {
         let data = snapshot.val();
         window.scrollTo(0, 0);
         book_data.innerHTML = `
@@ -317,6 +335,24 @@ window.addEventListener('click', function (e) {
             </div>
         </div>
         `
+    let comments = await getPosts()
+    commentList.innerHTML = comments.map((comment) => {
+        if(comment.commentID === commentId){
+            return `
+            <li>
+                <div class="comment_box">
+                    <div class="comment_top">
+                        <h4>${comment.title}</h4>
+                        <span>${comment.date.slice(5, 16)} ${comment.date.slice(17 ,22)}</span>
+                    </div>
+                    <div class="comment_text">
+                        <p>${comment.body}</p>
+                    </div>
+                </div>
+            </li>
+            `
+        }
+    }).join('')
     }).catch(function (error) {
         console.error("Error getting data:", error);
     });
@@ -373,3 +409,77 @@ all_books.addEventListener("click", function () {
     }
     getBooksDatas()
 })
+// book comment
+
+const commentInput = document.querySelector('#commentInput')
+const commentSendBtn = document.querySelector('#commentSendBtn')
+const commentList = document.querySelector('.comment_list')
+let commentId
+
+async function getPosts(){
+    try {
+        const response = await fetch('https://blog-api-t6u0.onrender.com/posts', {
+            method: 'GET',
+            headers:{
+                'Content-Type': "application/json",
+            }
+        })
+        const data = await response.json()
+        console.log(data);
+        return data;
+    } catch (err) {
+        console.log('err',err);
+    }
+}
+
+async function createPost(){
+    const dateNow = new Date()
+    let form = {
+        title: 'anonim',
+        body: commentInput.value,
+        commentID: commentId,
+        date: dateNow
+    }
+    try {
+        const response = await fetch(`https://blog-api-t6u0.onrender.com/posts`, {
+            method: 'POST',
+            headers:{
+                'Content-Type': "application/json",
+            },
+            body: JSON.stringify(form)
+        })
+        const data = await response.json();
+        return data;
+    } catch (err) {
+        console.log('err',err);
+    }
+}
+
+commentSendBtn.addEventListener('click', async()=>{
+    if(!commentInput.value){
+        alert('input is empty')
+        return
+    }
+    await createPost()
+    commentInput.value = ''
+    let comments = await getPosts()
+    commentList.innerHTML = comments.map((comment) => {
+        if(comment.commentID === commentId){
+            return `
+            <li>
+                <div class="comment_box">
+                    <div class="comment_top">
+                        <h4>${comment.title}</h4>
+                        <span>${comment.date.slice(5, 16)} ${comment.date.slice(17 ,22)}</span>
+                    </div>
+                    <div class="comment_text">
+                        <p>${comment.body}</p>
+                    </div>
+                </div>
+            </li>
+            `
+        }
+    }).join('')
+})
+
+// book comment
