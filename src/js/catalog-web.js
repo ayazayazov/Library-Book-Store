@@ -373,3 +373,78 @@ all_books.addEventListener("click", function () {
     }
     getBooksDatas()
 })
+
+// book comment
+
+const commentInput = document.querySelector('#commentInput')
+const commentSendBtn = document.querySelector('#commentSendBtn')
+const commentList = document.querySelector('.comment_list')
+let commentId
+
+async function getPosts(){
+    try {
+        const response = await fetch('https://blog-api-t6u0.onrender.com/posts', {
+            method: 'GET',
+            headers:{
+                'Content-Type': "application/json",
+            }
+        })
+        const data = await response.json()
+        console.log(data);
+        return data;
+    } catch (err) {
+        console.log('err',err);
+    }
+}
+
+async function createPost(){
+    const dateNow = new Date()
+    let form = {
+        title: 'anonim',
+        body: commentInput.value,
+        commentID: commentId,
+        date: dateNow
+    }
+    try {
+        const response = await fetch(`https://blog-api-t6u0.onrender.com/posts`, {
+            method: 'POST',
+            headers:{
+                'Content-Type': "application/json",
+            },
+            body: JSON.stringify(form)
+        })
+        const data = await response.json();
+        return data;
+    } catch (err) {
+        console.log('err',err);
+    }
+}
+
+commentSendBtn.addEventListener('click', async()=>{
+    if(!commentInput.value){
+        alert('input is empty')
+        return
+    }
+    await createPost()
+    commentInput.value = ''
+    let comments = await getPosts()
+    commentList.innerHTML = comments.map((comment) => {
+        if(comment.commentID === commentId){
+            return `
+            <li>
+                <div class="comment_box">
+                    <div class="comment_top">
+                        <h4>${comment.title}</h4>
+                        <span>${comment.date.slice(5, 16)} ${comment.date.slice(17 ,22)}</span>
+                    </div>
+                    <div class="comment_text">
+                        <p>${comment.body}</p>
+                    </div>
+                </div>
+            </li>
+            `
+        }
+    }).join('')
+})
+
+// book comment
