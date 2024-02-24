@@ -118,6 +118,7 @@ header{
   .account{
     display: flex;
   }
+  
     .mobile-menu-btn{
       display: none;
     }
@@ -162,7 +163,26 @@ header{
 
 @media only screen and (max-width: 430px) {
   .account{
-    display: none;
+    display: flex;
+    /* display: none; */
+  }
+
+  .joinUsAlertBox{
+    width: 300px;
+    top: 260px;
+  }
+
+  .join-us-modal {
+    padding: 34px 34px 20px 34px;
+  }
+
+  .join-us-modal input, .join-us-modal button{
+    width: 300px;
+    height: 60px;
+  }
+
+  .joinBtn{
+    margin-top: 60px;
   }
   .mobile-menu-btn{
     display: block;

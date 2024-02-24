@@ -3,7 +3,7 @@ body {
 }
 
 main {
-    margin: 86px 86px 0 86px;
+    padding: 40px 14px 12px 14px ;
 }
 
 .section-1 {
@@ -11,6 +11,7 @@ main {
     justify-content: space-between;
     gap: 140px;
     align-items: center;
+    justify-content: center;
     margin-bottom: 66px;
 
 }
@@ -20,7 +21,6 @@ main {
     gap: 16px;
     flex-direction: column;
     width: 30%;
-    margin-left: 40px;
 }
 
 .sec1-title {
@@ -170,11 +170,31 @@ main {
 
 /* RESPONSIVE DESIGN */
 
+@media only screen and (max-width: 430px) {
+    .section-1 img{
+        width: 100%;
+    }
+    .section-1 button{
+        width: 100%;
+    }
+    .section-3{
+        margin-left: 20px;
+    }
+    .statistic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
 
 @media only screen and (max-width: 1200px) {
     .section-1 {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .textbtn {

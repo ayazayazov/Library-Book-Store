@@ -57,7 +57,7 @@ line-height: 196.187%; /* 35.314px */
     }
 }
 
-@media only screen and (max-width: 430px){
+/* @media only screen and (max-width: 430px){
     .about-section{
         display: flex;
         flex-direction: column-reverse;
@@ -67,7 +67,7 @@ line-height: 196.187%; /* 35.314px */
     .about-paragraph{
         text-align: center;
     }
-}
+} */
 
 @media only screen and (max-width: 430px){
     .main{
@@ -75,6 +75,9 @@ line-height: 196.187%; /* 35.314px */
         margin-left: 0;
     }
     .about-paragraph{
+        width: 100%;
+    }
+    .about-img{
         width: 100%;
     }
 }
