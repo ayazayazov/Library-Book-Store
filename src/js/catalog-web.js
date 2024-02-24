@@ -326,7 +326,7 @@ window.addEventListener('click', function (e) {
                 <div class="comment_box">
                     <div class="comment_top">
                         <h4>${comment.title}</h4>
-                        <span>${comment.date.slice(5, 16)} ${comment.date.slice(17 ,22)}</span>
+                        <span>${comment.date.slice(0, 10)} ${comment.date.slice(11 ,16)}</span>
                     </div>
                     <div class="comment_text">
                         <p>${comment.body}</p>
@@ -475,7 +475,7 @@ commentSendBtn.addEventListener('click', async()=>{
                 <div class="comment_box">
                     <div class="comment_top">
                         <h4>${comment.title}</h4>
-                        <span>${comment.date.slice(5, 16)} ${comment.date.slice(17 ,22)}</span>
+                        <span>${comment.date.slice(0, 10)} ${comment.date.slice(17 ,22)}</span>
                     </div>
                     <div class="comment_text">
                         <p>${comment.body}</p>
