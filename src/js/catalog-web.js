@@ -384,6 +384,27 @@ document.getElementById("search_btn").addEventListener("click", function () {
     window.location = path_name
 })
 
+document.querySelector(".home_btn").addEventListener("click", function () {
+    let path_name = `/Library-Book-Store/index.html`
+    window.location = path_name
+})
+document.querySelector(".catalog_btn").addEventListener("click", function () {
+    let path_name = `/Library-Book-Store/src/pages/catalog.html`
+    window.location = path_name
+})
+document.querySelector(".about_btn").addEventListener("click", function () {
+    let path_name = `/Library-Book-Store/src/pages/about.html`
+    window.location = path_name
+})
+document.querySelector(".contact_btn").addEventListener("click", function () {
+    let path_name = `/Library-Book-Store/src/pages/contact.html`
+    window.location = path_name
+})
+document.querySelector(".search_btn").addEventListener("click", function () {
+    let path_name = `/Library-Book-Store/src/pages/search.html`
+    window.location = path_name
+})
+
 all_books.addEventListener("click", function () {
     localStorage.removeItem("category_id")
     let  btn_list= category_list.children
