@@ -7,6 +7,9 @@
     line-height: 196.187%; /* 35.314px */
     margin-bottom: 18px;
 }
+body{
+    background-color: #fffaf5;
+}
 .about-store h4{
     color: #333;
     font-family: 'Montserrat';
@@ -44,7 +47,7 @@
     border: 1px solid #E2E6EE;
     background: #FFF;
     box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
-    padding:0 8px;
+    padding:5px 8px;
     color: #030102;
     font-family: 'Roboto';
     font-size: 16px;
@@ -106,7 +109,7 @@
     border: 1px solid #E2E6EE;
     background: #FFF;
     box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
-    padding:0 8px;
+    padding:5px 8px;
     color: #030102;
     font-family: 'Roboto';
     font-size: 16px;
@@ -170,4 +173,7 @@ table img{
 }
 .modal_category.show{
     display: block;
+}
+.is-invalid{
+    border: 1px solid red!important;
 }

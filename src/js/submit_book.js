@@ -4,7 +4,6 @@ let book_category_submit = document.querySelector(".book_category_submit")
 let book_type = document.querySelector("#book_type")
 let modal_category = document.querySelector(".modal_category")
 let close_category = document.querySelector(".close_category")
-let alert_box = document.querySelector(".alert_box")
 let btn_book_type = document.querySelector(".btn_book_type")
 let book_name = document.querySelector("#book_name")
 let author_name = document.querySelector("#author_name")
@@ -32,7 +31,7 @@ let update_modal_box = document.querySelector(".update_modal_box")
 let update_book_btn = document.querySelector("#update_book_btn")
 let close_update = document.querySelector(".close_update")
 let modal_body_custom = document.querySelector(".modal_body_custom")
-
+import CustomToast from "./custom_toast.js";
 
 
 
@@ -106,20 +105,17 @@ book_category_submit?.addEventListener("click", function (e) {
         category_name,
     }
     writePushData('categories', form)
-    if (form) {
-        alert_box.innerHTML = `
-        <div class="alert mt-3 alert-success" role="alert">
-          About added!
-        </div>
-        `
-    }
+    CustomToast().fire({
+        icon: 'success',
+        title: 'Category created!'
+    })
     setTimeout(() => {
-        alert_box.innerHTML = ''
         modal_category.classList.remove("show")
-    }, 1000)
+    }, 500)
     type_name.value = "";
 
 })
+
 btn_book_type.addEventListener("click", function (e) {
     e.preventDefault();
     modal_category.classList.add("show")
@@ -171,21 +167,26 @@ add_book.addEventListener("click", function (e) {
     } else {
         description.classList.remove("is-invalid")
     }
-    if (!book_name || !author || !image_url || !description_book) {
+    if (!book_name || !author || !image_url || !description_book || !book_category ) {
+        CustomToast().fire({
+            icon: 'error',
+            title: 'Fill in the necessary sections!'
+        })
+        setTimeout(()=>{
+            book_name.classList.remove("is-invalid")
+            author_name.classList.remove("is-invalid")
+            book_image_url.classList.remove("is-invalid")
+            description.classList.remove("is-invalid")
+        },2000)
         return
     }
     writePushData('books', form)
-    if (form) {
-        alert_box.innerHTML = `
-        <div class="alert mt-3 alert-success" role="alert">
-          About added!
-        </div>
-        `
-    }
-    console.log(form,'form')
-    setTimeout(() => {
-        alert_box.innerHTML = ''
-    }, 1000)
+    CustomToast().fire({
+        icon: 'success',
+        title: 'The operation was completed successfully!'
+    })
+
+
     book_name.value="";
     author_name.value="";
     book_image_url.value="";
@@ -211,6 +212,7 @@ function renderCategory(snaphot) {
 }
 /* ======================== Show Categories Collection ========================= */
 function getBooksDatas(category_list) {
+
     const db_ref = ref(db)
     get(child(db_ref, 'books')).then((snapshot) => {
         if (snapshot.exists()) {
@@ -271,7 +273,7 @@ function getBooksDatas(category_list) {
     })
 }
 
-getBooksDatas()
+onValue(ref(db, "books"),getBooksDatas)
 
 
 function rmvData(id, col) {

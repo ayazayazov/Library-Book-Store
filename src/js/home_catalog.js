@@ -1,8 +1,4 @@
-
-
-let getParams = window.location.searchParams
-console.log(getParams)
-
+let catalog_list = document.getElementById("catalog_list")
 
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {
@@ -26,9 +22,9 @@ const firebaseConfig = {
     messagingSenderId: "925545310186",
     appId: "1:925545310186:web:8d3daf513aa050ad5ab493"
 };
+
 initializeApp(firebaseConfig)
 const db = getDatabase()
-
 /* ======================== Firebase Methods ========================= */
 
 function convertData(d) {
@@ -42,8 +38,29 @@ function convertData(d) {
     });
     return myNewData;
 }
+
 onValue(ref(db, "categories"), renderCategory);
+
 function renderCategory(snaphot) {
     const data = convertData(snaphot.val());
+    let data_list = data.map((item, index) => {
+        return `
+           <div class="col-lg-4">
+                <button class="catalog_box" value="${item.id}">
+                    ${item.category_name}
+                </button>
+            </div>
+        `
+    }).join("")
+    catalog_list.innerHTML = data_list;
+
     return data
 }
+window.addEventListener('click',function (e){
+   let id_data =  e.target.value
+    if (id_data) {
+        window.location.pathname ='/Library-Book-Store/src/pages/catalog.html'
+        localStorage.setItem("category_id",id_data)
+    }
+    if(!id_data){return}
+})

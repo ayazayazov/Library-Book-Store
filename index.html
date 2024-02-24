@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/home.css">
     <link rel="stylesheet" href="./src/styles/header-footer.css">
+    <link rel="stylesheet" href="./src/styles/sweetalert2.min.css">
 
 </head>
 
@@ -70,38 +71,14 @@
                 <img src="./src/assets/icon/homepagebook.svg" alt="">
             </div>
         </section>
-        <section class="section-2">
-            <div>
-                <div>
-                    <h2 class="sec2-title">Catalog</h2>
+        <section class="catalog_section section_padding">
+            <div class="container">
+                <div class="section_title">
+                    <h2>Catalog</h2>
                 </div>
-                <div class="cards">
-                    <div class="card">
-                        Books
-                    </div>
-                    <div class="card">
-                        Electronic books
-                    </div>
-                    <div class="card">
-                        Audiobooks
-                    </div>
-                    <div class="card">
-                        Toys, creativity
-                    </div>
-                    <div class="card">
-                        Book accessories
-                    </div>
-                    <div class="card">
-                        Notepads
-                    </div>
-                    <div class="card">
-                        Board games
-                    </div>
-                    <div class="card">
-                        Present
-                    </div>
-                    <div class="card">
-                        Stock
+                <div class="catalog_list">
+                    <div class="row" id="catalog_list">
+
                     </div>
                 </div>
             </div>
@@ -199,6 +176,9 @@
         </div>
     </footer>
     <script type="module" src="./src/js/join-us-btn.js"></script>
+    <script type="module" src="./src/js/home_catalog.js"></script>
+    <script src="src/js/clear_data.js"></script>
+    <script src="src/js/sweetalert2.min.js"></script>
     <script src="./src/js/book_page_comment.js"></script>
 </body>
 

@@ -1,5 +1,6 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
 import {getDatabase,ref,push,child,set,get,onValue,update,remove} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+import CustomToast from "./custom_toast.js";
 const firebaseConfig = {
     apiKey: "AIzaSyC6XY1TEOFV42mGOrBmRP0G2aD4HDTapNc",
     authDomain: "library-book-store-125e4.firebaseapp.com",
@@ -39,6 +40,10 @@ function pushJoinUsData(data){
         <div class="alert mt-3 alert-success" role="alert">
         Your request has been sent successfully!
         </div>`
+        CustomToast().fire({
+            icon: 'success',
+            title: 'The information was recorded!'
+        })
     } catch (err) {
         console.log(err);
     }

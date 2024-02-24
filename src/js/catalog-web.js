@@ -112,13 +112,12 @@ import {initializeApp} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-
 import {
     getDatabase,
     ref,
-    push,
     child,
-    set,
     get,
+    equalTo,
+    query,
+    orderByChild,
     onValue,
-    update,
-    remove
 } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -151,84 +150,100 @@ function convertData(d) {
 
 onValue(ref(db, "categories"), renderCategory);
 
+
+onValue(ref(db, "books"), renderNewBooks);
+onValue(ref(db, "books"), renderBestSellerBooks);
+
+function renderNewBooks() {
+    let mainQuery = query(ref(db, 'books'), orderByChild('isNewCheck'), equalTo(true))
+    get(mainQuery).then((snapshot) => {
+        if (snapshot.exists()) {
+            const data = convertData(snapshot.val());
+            let data_list = data.map((item, index) => {
+                return `
+            <div class="swiper-slide">
+                <div class="catalog_box_item">
+                    <img src="${item.image_url}" alt="">
+                    <span class="show">New</span>
+                    <h5>${item.book}</h5>
+                    <button class="read_more" value="${item.id}" >Read more</button>
+                </div>
+            </div>
+        `
+            }).join("")
+            swiper_new.innerHTML = data_list;
+            swiper_New.update()
+            return data
+        }
+    })
+}
+
+function renderBestSellerBooks() {
+    let mainQuery = query(ref(db, 'books'), orderByChild('isBestSellerCheck'), equalTo(true))
+    get(mainQuery).then((snapshot) => {
+        if (snapshot.exists()) {
+            const data = convertData(snapshot.val());
+            let data_list = data.map((item, index) => {
+                return `
+            <div class="swiper-slide">
+                <div class="catalog_box_item">
+                    <img src="${item.image_url}" alt="">
+                    <span class="${item.isNewCheck ? 'show' : ''}">${item.isNewCheck ? 'New': ""}</span>
+                    <h5>${item.book}</h5>
+                    <button class="read_more" value="${item.id}" >Read more</button>
+                </div>
+            </div>
+        `
+            }).join("")
+            swiper_bestSeller.innerHTML = data_list;
+            swiper_bestseller.update()
+            return data
+        }
+    })
+}
+
 function renderCategory(snaphot) {
     const data = convertData(snaphot.val());
     let data_list = data.map((item, index) => {
         return `
-           <li><button type="button" class="category_name" data-id="${item.id}">${item.category_name}</button></li>
+           <li data-id="${item.id}"><button type="button" class="category_name" data-id="${item.id}">${item.category_name}</button></li>
         `
     }).join("")
     category_list.innerHTML = data_list;
-    let btns = document.getElementsByClassName('category_name');
+    let btns = document.querySelectorAll('.category_name');
     for (let i = 0; i < btns.length; i++) {
+        btns[i].parentElement.classList.remove("active")
         btns[i].addEventListener('click', function () {
-            // btns[i].classList.add("active")
+            btns.forEach(btn => {
+                btn.parentElement.classList.remove("active")
+            })
+            btns[i].parentElement.classList.add("active")
             let id = btns[i].getAttribute('data-id')
+            localStorage.setItem("category_id", id)
             getBooksDatas(id)
-        })
 
+        })
+        let id = btns[i].getAttribute('data-id')
+        let local_id = localStorage.getItem("category_id")
+        if (id === local_id) {
+            btns[i].parentElement.classList.add("active")
+        }
     }
 
     return data
 }
 
-onValue(ref(db, "books"), renderNewBooks);
-onValue(ref(db, "books"), renderBestSellerBooks);
-
-function renderNewBooks(snaphot) {
-    const data = convertData(snaphot.val());
-    let filtered_books = data.filter((book) => {
-        if (book.isNewCheck === true) {
-            return book
-        }
-    })
-    let data_list = filtered_books.map((item, index) => {
-        return `
-            <div class="swiper-slide">
-                <div class="catalog_box_item">
-                    <img src="${item.image_url}" alt="">
-                   <span>New</span>
-                    <h5>${item.book}</h5>
-                    <button class="read_more" value="${item.id}" >Read more</button>
-                </div>
-            </div>
-        `
-    }).join("")
-    swiper_new.innerHTML = data_list;
-    swiper_New.update()
-    return data
-}
-
-function renderBestSellerBooks(snaphot) {
-    const data = convertData(snaphot.val());
-    let filtered_books = data.filter((book) => {
-        if (book.isBestSellerCheck === true) {
-            return book
-        }
-    })
-    let data_list = filtered_books.map((item, index) => {
-        return `
-            <div class="swiper-slide">
-                <div class="catalog_box_item">
-                    <img src="${item.image_url}" alt="">
-                   <span>${item.isNewCheck === true ? 'New' : ''}</span>
-                    <h5>${item.book}</h5>
-                    <button class="read_more" value="${item.id}" >Read more</button>
-                </div>
-            </div>
-        `
-    }).join("")
-    swiper_bestSeller.innerHTML = data_list;
-    swiper_bestseller.update()
-    return data
-}
-
-const local_data_list = JSON.parse(localStorage.getItem("book_list")) ?? [];
-
 function getBooksDatas(category_id) {
-    const db_ref = ref(db)
-    get(child(db_ref, 'books')).then((snapshot) => {
-        let book_data
+    let local_category_id = localStorage.getItem("category_id")
+
+    if (local_category_id) {
+        category_id = local_category_id
+    }
+    let mainQuery = query(ref(db, 'books'))
+    if (category_id) {
+        mainQuery = query(ref(db, 'books'), orderByChild('book_category'), equalTo(category_id))
+    }
+    get(mainQuery).then((snapshot) => {
         if (snapshot.exists()) {
             let dataArr = Object.entries(snapshot.val())
             let data_list = dataArr.map((item) => {
@@ -238,6 +253,7 @@ function getBooksDatas(category_id) {
                 };
                 return newObj
             })
+            let data_list_map = data_list.map((item, index) => {
             let filtered_data = data_list.filter((book) => {
                 return book.book_category === category_id
             })
@@ -259,7 +275,7 @@ function getBooksDatas(category_id) {
                 <div class="swiper-slide">
                     <div class="catalog_box_item">
                         <img src="${item.image_url}" alt="">
-                       <span> ${item.isNewCheck ? 'New' : ''}</span>
+                        <span class="${item.isNewCheck ? 'show' : ''}">${item.isNewCheck ? 'New': ""}</span>
                         <h5>${item.book}</h5>
                         <button class="read_more" value="${item.id}" >Read more</button>
                     </div>
@@ -269,6 +285,9 @@ function getBooksDatas(category_id) {
             swiper_all.innerHTML = data_list_map;
             swiper_all_x.update()
             return data_list
+        } else {
+            swiper_all.innerHTML = `<h1 class="no_data">There is no book in this category!</h1>`
+            swiper_all_x.update()
         }
     }).catch((err) => {
         console.log(err, 'err')
@@ -304,14 +323,14 @@ window.addEventListener('click', function (e) {
                         <h2 class="book_name">${data.book}</h2>
                         <h5 class="added_time">${convertTime(new Date(data.date_book_added))}</h5>
                         <h6 class="book_author">${data.author}</h6>
-                        <p class="book_desc">${data.description} </p>
+                        <p class="book_desc">${data.description_book} </p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="img_box">
                     <img src="${data.image_url}" alt="">
-                    <span class="new_book">${data.isNewCheck ? 'New' : ""}</span>
+                    <span class="new_book ${data.isNewCheck ? 'show' : ''}">${data.isNewCheck ? 'New': ""}</span>
                 </div>
             </div>
         </div>
@@ -345,7 +364,6 @@ function convertTime(time) {
     let difference = new_date.getTime() - time.getTime()
     let get_day = Math.floor(difference / 1000 / 60 / 60 / 24)
     let get_hours = Math.floor((difference / 1000 / 60 / 60) - get_day * 24)
-    // let get_minutes= Math.floor((difference / 1000 / 60 ) - (get_hours * 60) - get_day *24 )
     if (get_day >= 1) {
         show_date = `${get_day} day, ${get_hours} hours ago`
     } else if (get_day < 1 && get_hours >= 1) {
@@ -383,6 +401,14 @@ document.getElementById("search_btn").addEventListener("click", function () {
     window.location = path_name
 })
 
+all_books.addEventListener("click", function () {
+    localStorage.removeItem("category_id")
+    let  btn_list= category_list.children
+    for(let i=0;i<btn_list.length;i++){
+        btn_list[i].classList.remove("active")
+    }
+    getBooksDatas()
+})
 // book comment
 
 const commentInput = document.querySelector('#commentInput')
