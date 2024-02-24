@@ -292,6 +292,7 @@ window.addEventListener('click', function (e) {
     if (!id) {
         return
     }
+    commentId = e.target.value;
     let dataRef = ref(db, 'books' + "/" + id);
     get(dataRef).then(function (snapshot) {
         let data = snapshot.val();
@@ -317,6 +318,24 @@ window.addEventListener('click', function (e) {
             </div>
         </div>
         `
+        let comments = await getPosts()
+    commentList.innerHTML = comments.map((comment) => {
+        if(comment.commentID === commentId){
+            return `
+            <li>
+                <div class="comment_box">
+                    <div class="comment_top">
+                        <h4>${comment.title}</h4>
+                        <span>${comment.date.slice(5, 16)} ${comment.date.slice(17 ,22)}</span>
+                    </div>
+                    <div class="comment_text">
+                        <p>${comment.body}</p>
+                    </div>
+                </div>
+            </li>
+            `
+        }
+    }).join('')
     }).catch(function (error) {
         console.error("Error getting data:", error);
     });
