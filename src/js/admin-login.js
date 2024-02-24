@@ -23,6 +23,12 @@ const adminSignOut = document.querySelector('#adminSignOut')
 const adminLogin = document.querySelector('.admin-login')
 const adminPanel = document.querySelector('.admin-panel')
 const joinUsAlertBox = document.querySelector('.joinUsAlertBox')
+const aside = document.querySelector('#aside')
+const openMenu = document.querySelector('.open-menu')
+logoContainer.style.top = '92px'
+const line = document.querySelector('.line')
+const closeMenu = document.querySelector('.close-menu')
+const mobileLogoContainer = document.querySelector('.mobile-logo-container')
 
 adminLoginBtn.addEventListener('click', async()=>{
     const userEmail = userName.value.trim()

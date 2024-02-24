@@ -10,15 +10,16 @@ const nav = document.querySelector('#nav')
 function openMenuBTN(){
     aside.style.display = 'flex'
     // container.style.display = 'none'
-    aside.style.position = 'absolute'
+    aside.style.position = 'fixed'
     aside.style.height = '100vh'
-    aside.style.width = '260px'
+    aside.style.width = '310px'
     openMenu.style.display = 'none'
     logoContainer.style.top = '20px'
     nav.style.top = '150px'
     line.style.width = '140px'
     closeMenu.style.display = 'block'
     mobileLogoContainer.style.zIndex = '-1'
+    aside.style.zIndex = '1'
 }
 
 function closeMenuBTN(){
