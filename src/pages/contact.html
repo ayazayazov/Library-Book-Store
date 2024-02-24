@@ -21,20 +21,33 @@
 </head>
 
 <body>
-<div id="overlay-back"></div>
-<div class="join-us-modal">
-    <span>Join Us</span>
-    <div class="join-us-form">
-        <input id="joinUsFullnameInput" type="text" placeholder="Full Name">
-        <input id="joinUsEmailInput" type="email" placeholder="Email">
+    <div id="overlay-back"></div>
+    <div class="mobile-menu">
+        <button class="mobile-close-menu"><img src="../assets/icon/cloneMenu.svg" alt=""></button>
+        <ul>
+            <li><a id="home_btn" href="../../index.html">Home</a></li>
+            <li><a id="catalog_btn" href="">Catalog</a></li>
+            <li><a id="about_btn" href="./about.html">About
+                    Store</a></li>
+            <li><a id="contact_btn" style="font-weight: 700; text-decoration: underline; color: #E16A00;"
+                    href="./contact.html">Contact
+                    Us</a></li>
+            <li><a id="search_btn" href="./search.html">Search</a></li>
+        </ul>
     </div>
-    <button class="joinBtn" id="joinBtn">Join</button>
-    <div class="joinUsAlertBox">
-        <!-- <div class="alert mt-3 alert-success" role="alert">
+    <div class="join-us-modal">
+        <span>Join Us</span>
+        <div class="join-us-form">
+            <input id="joinUsFullnameInput" type="text" placeholder="Full Name">
+            <input id="joinUsEmailInput" type="email" placeholder="Email">
+        </div>
+        <button class="joinBtn" id="joinBtn">Join</button>
+        <div class="joinUsAlertBox">
+            <!-- <div class="alert mt-3 alert-success" role="alert">
         Your request has been sent successfully!
     </div> -->
+        </div>
     </div>
-</div>
     <header>
         <!-- <div class="mobile-logo-container">
         <img src="../assets/icon/books-mobile.svg" alt="">
@@ -157,6 +170,7 @@
     <script type="module" src="../js/join-us-btn.js"></script>
     <script src="../js/clear_data.js"></script>
     <script src="../js/sweetalert2.min.js"></script>
+    <script src="../js/mobile-menu-btn.js"></script>
 </body>
 
 </html>
